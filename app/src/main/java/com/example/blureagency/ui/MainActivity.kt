@@ -4,6 +4,7 @@ import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.navigation.NavController
 import androidx.navigation.fragment.NavHostFragment
+import androidx.navigation.ui.setupWithNavController
 import com.example.blureagency.R
 import com.example.blureagency.databinding.ActivityMainBinding
 
@@ -17,6 +18,8 @@ class MainActivity : AppCompatActivity() {
 
         val navHostFragment  = supportFragmentManager.findFragmentById(R.id.nav_host_fragment) as NavHostFragment
         navController = navHostFragment.navController
+
+       binding.mainActivityBottomNav.setupWithNavController(navController)
 
 
     }

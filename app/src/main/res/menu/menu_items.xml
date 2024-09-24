@@ -2,8 +2,24 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
-    <item android:title="menu"
-        android:icon="@drawable/menu_icon"
+    <item android:title="Home"
+        android:icon="@drawable/home"
         app:showAsAction="always"
+        android:id="@+id/homeFragment"
+        />
+    <item android:title="Services"
+        android:icon="@drawable/application"
+        app:showAsAction="always"
+        android:id="@+id/servicesFragment"
+        />
+    <item android:title="Contact"
+        android:icon="@drawable/telephone"
+        app:showAsAction="always"
+        android:id="@+id/contactUsFragment"
+        />
+    <item android:title="User"
+        android:icon="@drawable/user2"
+        app:showAsAction="always"
+        android:id="@+id/userFragment"
         />
 </menu>
