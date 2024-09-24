@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">Blore EG</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment" translatable="false">Hello blank fragment</string>
+    <!--    <string name="title">Impact the World \nby Taking Action</string>-->
+    <!--    <string name="androidDesc">Android Development Services \n We provide top-notch Android development services-->
+    <!--        \n Partner with us for innovative and reliable mobile solutions.-->
+    <!--    </string>-->
+    <!--    <string name="text_view_3">Objectively foster extensible scenarios and business innovation.-->
+    <!--Energistically predominate prospective experiences with strategic-->
+    <!--initiatives.</string>-->
+    <string name="welcome_to_blore_agency">Welcome To Blore EG</string>
+</resources>

@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layoutDirection="rtl"
+    tools:context=".firstFragment">
+
+    <TextView
+        android:id="@+id/welcomeTV"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:fontFamily="@font/inter_medium"
+        android:text="@string/welcome_to_blore_agency"
+        android:layout_marginTop="30dp"
+        android:layout_marginStart="20dp"
+
+        android:textSize="20sp" />
+    <ImageView
+        android:id="@+id/imag1"
+        android:layout_width="match_parent"
+        android:layout_height="250dp"
+        android:src="@drawable/hero1"
+        android:layout_marginTop="10dp"
+        app:layout_constraintTop_toBottomOf="@id/welcomeTV"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        />
+
+    <TextView
+        android:id="@+id/bigTitleTV"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text=""
+        android:textSize="40sp"
+        app:layout_constraintTop_toBottomOf="@id/imag1"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="20dp"
+        />
+
+    <TextView
+        android:id="@+id/tvUnderBigTitle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text=""
+        android:textColor="@color/gray"
+        android:textSize="18sp"
+        app:layout_constraintTop_toBottomOf="@id/bigTitleTV"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="15dp"
+        />
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layoutDirection="ltr"
+    android:background="@color/white_smoke"
+    tools:context=".ui.StartActivity">
+
+    <androidx.viewpager2.widget.ViewPager2
+        android:id="@+id/startActivityViewPager"
+        android:layout_width="match_parent"
+        android:layout_height="550dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+
+        />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/nextBTN"
+        android:layout_width="wrap_content"
+        android:layout_height="40dp"
+        android:text="Next"
+        android:textSize="15sp"
+        android:fontFamily="@font/alata"
+        android:textColor="@color/white"
+        android:background="@drawable/next_btn_bg"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginStart="10dp"
+        android:layout_marginBottom="35dp"
+        />
+
+    <com.tbuonomo.viewpagerdotsindicator.WormDotsIndicator
+        android:id="@+id/worm_dots_indicator"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:outlineAmbientShadowColor="@color/gray"
+        app:dotsColor="@color/purple_blue"
+        app:dotsStrokeColor="@color/purple_blue"
+        app:dotsCornerRadius="8dp"
+        app:dotsSize="16dp"
+        app:dotsSpacing="4dp"
+        app:dotsStrokeWidth="2dp"
+        android:orientation="horizontal"
+        android:layoutDirection="ltr"
+        android:scrollIndicators="start"
+        app:layout_constraintTop_toBottomOf="@id/startActivityViewPager"
+        app:layout_constraintStart_toStartOf="@id/nextBTN"
+        app:layout_constraintEnd_toEndOf="@id/SkipBTN"
+        app:layout_constraintBottom_toTopOf="@id/nextBTN"
+        android:layout_marginBottom="10dp"
+        />
+
+
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/SkipBTN"
+        android:layout_width="wrap_content"
+        android:layout_height="40dp"
+        android:text="Skip"
+        android:textSize="15sp"
+        android:fontFamily="@font/alata"
+        android:textColor="@color/white"
+        android:background="@drawable/next_btn_bg"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginEnd="10dp"
+        android:layout_marginBottom="35dp"
+        />
+</androidx.constraintlayout.widget.ConstraintLayout>
