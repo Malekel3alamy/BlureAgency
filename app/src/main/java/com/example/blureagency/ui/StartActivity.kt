@@ -52,7 +52,7 @@ class StartActivity : AppCompatActivity() {
         val item1 = ViewPagerServie(0,"android.resource://"+packageName+"/"+R.drawable.web5,"Web Development")
         val item2 = ViewPagerServie(1,"android.resource://"+packageName+"/"+R.drawable.android_intro_1,"Android Development")
         val item3 = ViewPagerServie(2,"android.resource://"+packageName+"/"+R.drawable.network_system,"Network Systems")
-        val item4 = ViewPagerServie(3,"android.resource://"+packageName+"/"+R.drawable.security5,"Security Systems")
+        val item4 = ViewPagerServie(3,"android.resource://"+packageName+"/"+R.drawable.security_system,"Security Systems")
         val item5 = ViewPagerServie(4,"android.resource://"+packageName+"/"+R.drawable.marketing5,"Marketing")
         val item6 = ViewPagerServie(5,"android.resource://"+packageName+"/"+R.drawable.video_edit,"Video Editing")
         val item7 = ViewPagerServie(6,"android.resource://"+packageName+"/"+R.drawable.general_finishes2,"General")

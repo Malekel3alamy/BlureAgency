@@ -3,6 +3,8 @@
     <style name="Base.Theme.BlureAgency" parent="Theme.Material3.Light.NoActionBar">
         <!-- Customize your light theme here. -->
         <item name="colorPrimary">@color/payne_gray</item>
+        <item name="android:windowIsTranslucent">true</item>
+
     </style>
 
 
