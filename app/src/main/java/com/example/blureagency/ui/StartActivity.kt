@@ -28,16 +28,16 @@ class StartActivity : AppCompatActivity() {
         }
 
         binding.nextBTN.setOnClickListener {
-            if (binding.startActivityViewPager.currentItem <6){
+            if (binding.startActivityViewPager.currentItem <1){
                 binding.startActivityViewPager.currentItem = binding.startActivityViewPager.currentItem+1
 
-            }else if(binding.startActivityViewPager.currentItem ==6){
+            }else if(binding.startActivityViewPager.currentItem ==1){
                 val intent = Intent(this,MainActivity::class.java)
                 startActivity(intent)
             }
         }
 
-        if (binding.startActivityViewPager.currentItem == 6){
+        if (binding.startActivityViewPager.currentItem == 1){
             binding.nextBTN.setOnClickListener {
 
             }
@@ -49,14 +49,16 @@ class StartActivity : AppCompatActivity() {
 
     private fun createViewPagerList():List<ViewPagerServie>{
 
-        val item1 = ViewPagerServie(0,"android.resource://"+packageName+"/"+R.drawable.web5,"Web Development")
-        val item2 = ViewPagerServie(1,"android.resource://"+packageName+"/"+R.drawable.android_intro_1,"Android Development")
-        val item3 = ViewPagerServie(2,"android.resource://"+packageName+"/"+R.drawable.network_system,"Network Systems")
-        val item4 = ViewPagerServie(3,"android.resource://"+packageName+"/"+R.drawable.security_system,"Security Systems")
-        val item5 = ViewPagerServie(4,"android.resource://"+packageName+"/"+R.drawable.marketing5,"Marketing")
-        val item6 = ViewPagerServie(5,"android.resource://"+packageName+"/"+R.drawable.video_edit,"Video Editing")
-        val item7 = ViewPagerServie(6,"android.resource://"+packageName+"/"+R.drawable.general_finishes2,"General")
-        val servicesList = listOf(item1,item2,item3,item4,item5,item6,item7)
+        val item1 = ViewPagerServie(0,"android.resource://"+packageName+"/"+R.drawable.first_screen,
+            "Welcome To Blore EG \n"+"Your Premier Provider Of IT Construction And Network Infrastructure Solutions In Egypt. "
+                    )
+        val item2 = ViewPagerServie(1,"android.resource://"+packageName+"/"+R.drawable.android_intro_1,
+            "at Blore EG \n" +
+                    "we specialize in it construction and network infrastructure\n,offering"  +
+                    "comprehensive solutions to meet the connectivity needs of businesses and"  +
+                    "governmental institutions.")
+
+        val servicesList = listOf(item1,item2)
         return servicesList
     }
 }

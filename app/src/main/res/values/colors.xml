@@ -8,6 +8,20 @@
     <color name="silver_sand">#bfc1c2</color>
 
 
+
+    <color name="blue_1"> #3399ca</color>
+    <color name="blue_2">#317da0</color>
+    <color name="blue_3">#054faa </color>
+    <color name="blue_4">#a4c4db</color>
+    <color name="blue_5">#80b8cd</color>
+    <color name="start_color">#4EC8DD</color>
+    <color name="second_color">#3AA7D0</color>
+    <color name="third_color">#1C79BF</color>
+    <color name="end_color">#0E60B6</color>
+
+
+
+
     <color name="purple_blue">#6a5acd</color>
     <color name="red_rose">#e32636</color>
     <color name="cardinal">#c41e3a</color>

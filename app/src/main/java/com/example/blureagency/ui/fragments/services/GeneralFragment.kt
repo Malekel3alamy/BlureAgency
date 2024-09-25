@@ -18,6 +18,6 @@ class GeneralFragment : Fragment(R.layout.fragment_general) {
         hideBottomNav()
     }
     fun hideBottomNav(){
-        MainActivity().binding.mainActivityBottomNav.visibility = View.GONE
+        (activity as MainActivity).hideNav()
     }
 }

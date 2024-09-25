@@ -15,37 +15,45 @@
         android:textSize="25sp"
         android:layout_marginStart="10dp"
         android:layout_marginEnd="10dp"
-        android:textAlignment="center"
+        android:textAlignment="textStart"
         android:textStyle="bold"
         android:fontFamily="@font/alata"
-        android:text="Android Development"
+        android:text="let's Start "
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
+
     <TextView
-        android:id="@+id/serviceKeywordTV"
+        android:id="@+id/viewPagerItemParagraph"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         app:layout_constraintTop_toBottomOf="@id/viewPagerItemDescription"
-        android:textColor="@color/purple_blue"
-        android:textSize="25sp"
+        android:textColor="@color/gray"
+        android:textSize="15sp"
+        android:layout_marginTop="10dp"
         android:layout_marginStart="10dp"
         android:layout_marginEnd="10dp"
-        android:textAlignment="center"
+        android:textAlignment="textStart"
         android:textStyle="bold"
         android:fontFamily="@font/alata"
-        android:text="Service"
+        android:text="at Blore EG, we specialize in it construction and network infrastructure, offering
+comprehensive solutions to meet the connectivity needs of businesses and
+governmental institutions.
+ "
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
+
 
     <ImageView
         android:id="@+id/viewPagerImageView"
         android:layout_width="match_parent"
-        android:layout_height="400dp"
+        android:layout_height="300dp"
         android:scaleType="fitXY"
         android:layout_marginTop="20dp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/serviceKeywordTV"
-        android:src="@drawable/security2" />
+        app:layout_constraintTop_toBottomOf="@id/viewPagerItemParagraph"
+        android:src="@drawable/icon_white"
+
+        />
 
 
 

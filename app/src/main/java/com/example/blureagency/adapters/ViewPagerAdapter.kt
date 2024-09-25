@@ -15,7 +15,7 @@ import com.example.blureagency.models.ViewPagerServie
     class MyViewHolder(val view:View):RecyclerView.ViewHolder(view) {
 
         val image = view.findViewById<ImageView>(R.id.viewPagerImageView)
-        val discription = view.findViewById<TextView>(R.id.viewPagerItemDescription)
+        val discription = view.findViewById<TextView>(R.id.viewPagerItemParagraph)
 
 
     }

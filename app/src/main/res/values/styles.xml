@@ -23,9 +23,12 @@
 
     <style name="CutCorners" >
         <item name="cornerFamily">rounded</item>
+        <item name="android:backgroundTint">@color/third_color</item>
         <item name="cornerSize">0dp</item>
         <item name="cornerSizeTopLeft">20dp</item>
         <item name="cornerSizeTopRight">20dp</item>
+<!--        <item name="cornerSizeBottomLeft">10dp</item>-->
+<!--        <item name="cornerSizeBottomRight">10dp</item>-->
     </style>
 
 
