@@ -10,9 +10,10 @@
         android:id="@+id/viewPagerItemDescription"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:layout_constraintTop_toBottomOf="@id/guideline"
+        app:layout_constraintTop_toBottomOf="@id/viewPagerImageView"
         android:textColor="@color/gray"
         android:textSize="25sp"
+        android:layout_marginTop="10dp"
         android:layout_marginStart="10dp"
         android:layout_marginEnd="10dp"
         android:textAlignment="textStart"
@@ -28,7 +29,7 @@
         android:layout_height="wrap_content"
         app:layout_constraintTop_toBottomOf="@id/viewPagerItemDescription"
         android:textColor="@color/gray"
-        android:textSize="15sp"
+        android:textSize="14sp"
         android:layout_marginTop="10dp"
         android:layout_marginStart="10dp"
         android:layout_marginEnd="10dp"
@@ -50,11 +51,10 @@ governmental institutions.
         android:scaleType="fitXY"
         android:layout_marginTop="20dp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/viewPagerItemParagraph"
+        app:layout_constraintTop_toBottomOf="@id/guideline"
         android:src="@drawable/icon_white"
 
         />
-
 
 
     <androidx.constraintlayout.widget.Guideline
@@ -62,5 +62,5 @@ governmental institutions.
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.10" />
+        app:layout_constraintGuide_percent="0.06" />
 </androidx.constraintlayout.widget.ConstraintLayout>

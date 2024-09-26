@@ -3,10 +3,14 @@
 
     <item>
         <shape>
+            <solid
+                android:color="@color/white"/>
+            <corners
+                android:radius="500dp"/>
             <gradient
                 android:angle="225"
-                android:startColor="@color/start_color"
-                android:endColor="@color/second_color"
+                android:startColor="@color/silver"
+                android:endColor="@color/material_dynamic_primary60"
                 />
         </shape>
     </item>

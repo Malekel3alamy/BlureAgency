@@ -5,17 +5,33 @@
     android:id="@+id/splash_screen_main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/gradient_list"
+    android:background="@color/white"
     tools:context=".ui.SplashActivity">
+
+
+
+    <com.airbnb.lottie.LottieAnimationView
+        android:id="@+id/imageView_bg"
+        android:layout_width="300dp"
+        android:layout_height="270dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:lottie_rawRes="@raw/animation"
+        app:lottie_autoPlay="true"
+        app:lottie_loop="false"
+        app:layout_constraintBottom_toBottomOf="parent"
+        />
 
     <ImageView
         android:id="@+id/imageView"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/icon_white"
+        app:srcCompat="@drawable/logo"
         />
 
     <LinearLayout
@@ -31,7 +47,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Wel"
-            android:textColor="@color/white"
+            android:textColor="@color/black"
             android:fontFamily="@font/alata"
             android:textSize="25sp"
             />
@@ -40,7 +56,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="come"
-            android:textColor="@color/blue_3"
+            android:textColor="@color/black"
 
             android:fontFamily="@font/alata"
             android:textSize="25sp"

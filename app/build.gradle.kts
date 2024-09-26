@@ -46,6 +46,9 @@ dependencies {
     implementation(libs.androidx.activity)
     implementation(libs.androidx.constraintlayout)
 
+    // LottieFiles Animation
+    implementation ("com.airbnb.android:lottie:3.4.0")
+
 
     // Navigation Components
     implementation ("androidx.navigation:navigation-fragment-ktx:2.8.1")

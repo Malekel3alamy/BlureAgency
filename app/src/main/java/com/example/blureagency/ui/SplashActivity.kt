@@ -18,17 +18,16 @@ class SplashActivity : AppCompatActivity() {
         binding = ActivitySplashBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        val animation :AnimationDrawable = binding.splashScreenMain.background as AnimationDrawable
+//        val animation :AnimationDrawable = binding.imageView.background as AnimationDrawable
+//        animation.setEnterFadeDuration(1000)
+//        animation.setExitFadeDuration(1000)
+//        animation.start()
 
-        animation.setEnterFadeDuration(1000)
-        animation.setExitFadeDuration(1000)
-        animation.start()
 
-
-       Handler().postDelayed({
+     /*  Handler().postDelayed({
             val intent = Intent(this,StartActivity::class.java)
             startActivity(intent)
             finish()
-        },3000L)
+        },3000L)*/
     }
 }

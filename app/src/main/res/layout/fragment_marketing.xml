@@ -55,7 +55,7 @@
                     android:layout_column="0"
                     android:layout_row="0"
                     android:layout_margin="5dp"
-                    android:src="@drawable/net1"
+                    android:src="@drawable/marketing_s1"
                     app:layout_constraintTop_toBottomOf="@id/networkServiceTV"
                     app:layout_constraintStart_toStartOf="parent"
                     />
@@ -68,7 +68,7 @@
                     android:layout_row="0"
                     app:shapeAppearanceOverlay="@style/ImageRoundedCorners"
 
-                    android:src="@drawable/net2"
+                    android:src="@drawable/marketing_s2"
                     android:layout_margin="5dp"
                     app:layout_constraintTop_toBottomOf="@id/networkServiceTV"
                     app:layout_constraintStart_toStartOf="parent"
@@ -83,7 +83,7 @@
                     android:layout_row="1"
                     app:shapeAppearanceOverlay="@style/ImageRoundedCorners"
 
-                    android:src="@drawable/net3"
+                    android:src="@drawable/marketing_s3"
                     android:id="@+id/net3"
                     android:layout_margin="5dp"
                     app:layout_constraintTop_toBottomOf="@id/networkServiceTV"
@@ -98,7 +98,7 @@
                     app:shapeAppearanceOverlay="@style/ImageRoundedCorners"
                     android:layout_column="1"
                     android:layout_row="1"
-                    android:src="@drawable/net4"
+                    android:src="@drawable/marketing_s4"
                     android:layout_margin="5dp"
                     android:id="@+id/net4"
                     app:layout_constraintTop_toBottomOf="@id/networkServiceTV"
@@ -109,7 +109,7 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="@string/networks_paragraph"
+                android:text="At [ Blore EG ], we excel in delivering comprehensive marketing services designed to elevate your brand and drive business growth. Our team of seasoned marketing professionals is dedicated to crafting tailored strategies that resonate with your target audience and achieve measurable results. We specialize in a wide range of marketing solutions, including digital marketing, social media management, content creation, and SEO optimization. By leveraging data-driven insights and the latest industry trends, we ensure that your marketing campaigns are not only innovative but also effective. Partner with us to enhance your brand visibility, engage your customers, and achieve your business objectives with precision and creativity."
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 android:textColor="@color/gray"

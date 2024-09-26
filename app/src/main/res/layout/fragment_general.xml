@@ -55,7 +55,7 @@
                     android:layout_column="0"
                     android:layout_row="0"
                     android:layout_margin="5dp"
-                    android:src="@drawable/net1"
+                    android:src="@drawable/general_s"
                     app:layout_constraintTop_toBottomOf="@id/networkServiceTV"
                     app:layout_constraintStart_toStartOf="parent"
                     />
@@ -68,7 +68,7 @@
                     android:layout_row="0"
                     app:shapeAppearanceOverlay="@style/ImageRoundedCorners"
 
-                    android:src="@drawable/net2"
+                    android:src="@drawable/general_s1"
                     android:layout_margin="5dp"
                     app:layout_constraintTop_toBottomOf="@id/networkServiceTV"
                     app:layout_constraintStart_toStartOf="parent"
@@ -83,12 +83,11 @@
                     android:layout_row="1"
                     app:shapeAppearanceOverlay="@style/ImageRoundedCorners"
 
-                    android:src="@drawable/net3"
+                    android:src="@drawable/general_s2"
                     android:id="@+id/net3"
                     android:layout_margin="5dp"
                     app:layout_constraintTop_toBottomOf="@id/networkServiceTV"
                     app:layout_constraintStart_toStartOf="parent"
-
                     />
 
                 <com.google.android.material.imageview.ShapeableImageView
@@ -98,7 +97,7 @@
                     app:shapeAppearanceOverlay="@style/ImageRoundedCorners"
                     android:layout_column="1"
                     android:layout_row="1"
-                    android:src="@drawable/net4"
+                    android:src="@drawable/general_s3"
                     android:layout_margin="5dp"
                     android:id="@+id/net4"
                     app:layout_constraintTop_toBottomOf="@id/networkServiceTV"
@@ -109,7 +108,7 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="@string/networks_paragraph"
+                android:text="At [ Blore EG ], we specialize in providing top-quality general finishing services that transform your spaces into stunning, polished environments. Our team of skilled professionals is dedicated to delivering meticulous craftsmanship and attention to detail in every project we undertake. Whether it’s residential, commercial, or industrial finishing, we offer a comprehensive range of services including painting, plastering, flooring, and more. By using premium materials and the latest techniques, we ensure that every surface is flawlessly finished to meet your exact specifications. Partner with us to enhance the beauty and functionality of your spaces with our reliable, efficient, and high-standard finishing solutions."
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 android:textColor="@color/gray"

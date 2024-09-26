@@ -21,4 +21,119 @@
         app:layout_constraintTop_toTopOf="parent"
         tools:fontFamily="@font/alata" />
 
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintTop_toBottomOf="@id/networkServiceTV"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+
+        >
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="100dp"
+            >
+            <GridLayout
+                android:id="@+id/network_fragment_four_images"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                android:columnCount="2"
+                android:rowCount="2"
+                android:layout_marginTop="20dp"
+                >
+                <com.google.android.material.imageview.ShapeableImageView
+                    android:layout_width="150dp"
+                    android:layout_height="150dp"
+                    android:id="@+id/net1"
+                    app:shapeAppearanceOverlay="@style/ImageRoundedCorners"
+
+                    android:scaleType="fitXY"
+                    android:layout_column="0"
+                    android:layout_row="0"
+                    android:layout_margin="5dp"
+                    android:src="@drawable/sec_s1"
+                    app:layout_constraintTop_toBottomOf="@id/networkServiceTV"
+                    app:layout_constraintStart_toStartOf="parent"
+                    />
+                <com.google.android.material.imageview.ShapeableImageView
+                    android:layout_width="150dp"
+                    android:layout_height="150dp"
+                    android:id="@+id/net2"
+                    android:scaleType="fitXY"
+                    android:layout_column="1"
+                    android:layout_row="0"
+                    app:shapeAppearanceOverlay="@style/ImageRoundedCorners"
+
+                    android:src="@drawable/sec_s2"
+                    android:layout_margin="5dp"
+                    app:layout_constraintTop_toBottomOf="@id/networkServiceTV"
+                    app:layout_constraintStart_toStartOf="parent"
+
+                    />
+
+                <com.google.android.material.imageview.ShapeableImageView
+                    android:layout_width="150dp"
+                    android:layout_height="150dp"
+                    android:scaleType="fitXY"
+                    android:layout_column="0"
+                    android:layout_row="1"
+                    app:shapeAppearanceOverlay="@style/ImageRoundedCorners"
+
+                    android:src="@drawable/sec_s3"
+                    android:id="@+id/net3"
+                    android:layout_margin="5dp"
+                    app:layout_constraintTop_toBottomOf="@id/networkServiceTV"
+                    app:layout_constraintStart_toStartOf="parent"
+
+                    />
+
+                <com.google.android.material.imageview.ShapeableImageView
+                    android:layout_width="150dp"
+                    android:layout_height="150dp"
+                    android:scaleType="fitXY"
+                    app:shapeAppearanceOverlay="@style/ImageRoundedCorners"
+                    android:layout_column="1"
+                    android:layout_row="1"
+                    android:src="@drawable/sec_s4"
+                    android:layout_margin="5dp"
+                    android:id="@+id/net4"
+                    app:layout_constraintTop_toBottomOf="@id/networkServiceTV"
+                    app:layout_constraintStart_toStartOf="parent"
+
+                    />
+            </GridLayout>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="At [ Blore EG ], we are dedicated to providing state-of-the-art security systems that ensure the safety and peace of mind of our clients. Our comprehensive solutions include advanced surveillance cameras, motion sensors, and smart home integration, all designed to offer robust protection for your property. With our cutting-edge technology, you can monitor your premises in real-time from anywhere, receive instant alerts, and control your security system remotely through intuitive mobile apps. We pride ourselves on delivering reliable, scalable, and user-friendly security solutions that are tailored to meet the unique needs of each client. Partner with us to safeguard your home or business with the highest level of security and innovation."
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:textColor="@color/gray"
+                android:textSize="15sp"
+                android:padding="15dp"
+                android:layout_marginTop="10dp"
+                android:fontFamily="@font/inter_medium"
+                app:layout_constraintTop_toBottomOf="@id/network_fragment_four_images"
+
+                />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.core.widget.NestedScrollView>
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/networkFragment_contact_us_btn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Contact Us"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_margin="20dp"
+        android:textColor="@color/white"
+        android:fontFamily="@font/inter_medium"
+        android:background="@drawable/contact_us_btn_bg"
+        />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

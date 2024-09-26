@@ -6,6 +6,7 @@ import android.view.View
 import androidx.navigation.fragment.findNavController
 import com.example.blureagency.R
 import com.example.blureagency.databinding.FragmentServicesBinding
+import com.example.blureagency.ui.MainActivity
 
 
 class servicesFragment : Fragment(R.layout.fragment_services) {
@@ -13,6 +14,7 @@ private lateinit var binding: FragmentServicesBinding
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         binding = FragmentServicesBinding.bind(view)
+
 
 
         binding.marketingService.setOnClickListener {
@@ -46,8 +48,11 @@ private lateinit var binding: FragmentServicesBinding
 
 
 
+    }
 
-
+    override fun onResume() {
+        super.onResume()
+        (activity as MainActivity).showNav()
     }
 
 }

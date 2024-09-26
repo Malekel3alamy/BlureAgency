@@ -54,7 +54,7 @@ class StartActivity : AppCompatActivity() {
                     )
         val item2 = ViewPagerServie(1,"android.resource://"+packageName+"/"+R.drawable.android_intro_1,
             "at Blore EG \n" +
-                    "we specialize in it construction and network infrastructure\n,offering"  +
+                    "we specialize in it construction and network infrastructure,offering"  +
                     "comprehensive solutions to meet the connectivity needs of businesses and"  +
                     "governmental institutions.")
 
