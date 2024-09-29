@@ -5,10 +5,8 @@
     android:id="@+id/splash_screen_main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/white"
+    style="@style/screen_background"
     tools:context=".ui.SplashActivity">
-
-
 
     <com.airbnb.lottie.LottieAnimationView
         android:id="@+id/imageView_bg"
@@ -31,7 +29,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/logo"
+        style="@style/splash_icon"
         />
 
     <LinearLayout
@@ -46,21 +44,12 @@
             android:id="@+id/welcomeTV"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Wel"
-            android:textColor="@color/black"
+            android:text="@string/welcome"
+            style="@style/text_color"
             android:fontFamily="@font/alata"
             android:textSize="25sp"
             />
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="come"
-            android:textColor="@color/black"
-
-            android:fontFamily="@font/alata"
-            android:textSize="25sp"
-            />
     </LinearLayout>
 
     <androidx.constraintlayout.widget.Guideline

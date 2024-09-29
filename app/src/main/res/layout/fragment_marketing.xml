@@ -3,6 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    style="@style/screen_background"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".ui.fragments.services.MarketingFragment">
 
@@ -12,7 +13,7 @@
         android:layout_height="wrap_content"
         android:layout_margin="15dp"
         android:fontFamily="More Fonts..."
-        android:text="Marketing Service"
+        android:text="@string/marketing_services"
         android:textAlignment="center"
         android:textSize="22sp"
         android:textStyle="bold"
@@ -50,7 +51,6 @@
                     android:layout_height="150dp"
                     android:id="@+id/net1"
                     app:shapeAppearanceOverlay="@style/ImageRoundedCorners"
-
                     android:scaleType="fitXY"
                     android:layout_column="0"
                     android:layout_row="0"
@@ -109,10 +109,10 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="At [ Blore EG ], we excel in delivering comprehensive marketing services designed to elevate your brand and drive business growth. Our team of seasoned marketing professionals is dedicated to crafting tailored strategies that resonate with your target audience and achieve measurable results. We specialize in a wide range of marketing solutions, including digital marketing, social media management, content creation, and SEO optimization. By leveraging data-driven insights and the latest industry trends, we ensure that your marketing campaigns are not only innovative but also effective. Partner with us to enhance your brand visibility, engage your customers, and achieve your business objectives with precision and creativity."
+                android:text="@string/marketing_parahraph"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
-                android:textColor="@color/gray"
+                style="@style/text_color_description"
                 android:textSize="15sp"
                 android:padding="15dp"
                 android:layout_marginTop="10dp"
@@ -126,14 +126,15 @@
         android:id="@+id/networkFragment_contact_us_btn"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Contact Us"
+        android:text="@string/contact_us"
+        android:textAllCaps="false"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         android:layout_margin="20dp"
-        android:textColor="@color/white"
         android:fontFamily="@font/inter_medium"
         android:background="@drawable/contact_us_btn_bg"
+        style="@style/button_background"
         />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

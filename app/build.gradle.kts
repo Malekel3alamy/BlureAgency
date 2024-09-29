@@ -16,6 +16,9 @@ android {
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
     }
+//    androidResources {
+//        generateLocaleConfig = true
+//    }
     buildFeatures{
         viewBinding = true
     }
@@ -59,6 +62,9 @@ dependencies {
 
     // Dots Indicator
     implementation("com.tbuonomo:dotsindicator:5.0")
+
+    // Circular Image
+    implementation ("de.hdodenhof:circleimageview:3.1.0")
 
 
     testImplementation(libs.junit)

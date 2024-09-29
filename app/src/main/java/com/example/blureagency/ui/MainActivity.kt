@@ -22,8 +22,6 @@ class MainActivity : AppCompatActivity() {
         navController = navHostFragment.navController
 
        binding.mainActivityBottomNav.setupWithNavController(navController)
-
-
     }
 
     fun hideNav(){

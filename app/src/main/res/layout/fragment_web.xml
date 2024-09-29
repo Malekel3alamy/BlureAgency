@@ -3,6 +3,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    style="@style/screen_background"
+    android:id="@+id/webFragment"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".ui.fragments.services.WebFragment">
 
@@ -12,7 +14,7 @@
         android:layout_height="wrap_content"
         android:layout_margin="15dp"
         android:fontFamily="More Fonts..."
-        android:text="Web Development"
+        android:text="@string/web_development"
         android:textAlignment="center"
         android:textSize="22sp"
         android:textStyle="bold"
@@ -109,10 +111,10 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="At [Blore EG ], we excel in providing comprehensive web development services that cater to your unique business needs. Our team of experienced developers is dedicated to creating secure, scalable, and responsive web applications that not only look visually appealing but also offer a seamless user experience. We specialize in crafting custom web solutions with user-centric UI/UX designs, ensuring that your website is both functional and engaging. By integrating the latest technologies and industry best practices, we deliver web applications that are robust, efficient, and tailored to drive your business forward. Partner with us to elevate your online presence and achieve your digital goals."
+                android:text="@string/web_paragraph"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
-                android:textColor="@color/gray"
+                style="@style/text_color_description"
                 android:textSize="15sp"
                 android:padding="15dp"
                 android:layout_marginTop="10dp"
@@ -126,13 +128,14 @@
         android:id="@+id/networkFragment_contact_us_btn"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Contact Us"
+        android:text="@string/contact_us"
+        android:textAllCaps="false"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         android:layout_margin="20dp"
-        android:textColor="@color/white"
         android:fontFamily="@font/inter_medium"
+        style="@style/button_background"
         android:background="@drawable/contact_us_btn_bg"
         />
 

@@ -50,13 +50,10 @@ class StartActivity : AppCompatActivity() {
     private fun createViewPagerList():List<ViewPagerServie>{
 
         val item1 = ViewPagerServie(0,"android.resource://"+packageName+"/"+R.drawable.first_screen,
-            "Welcome To Blore EG \n"+"Your Premier Provider Of IT Construction And Network Infrastructure Solutions In Egypt. "
+            resources.getString(R.string.fist_intro_text)
                     )
         val item2 = ViewPagerServie(1,"android.resource://"+packageName+"/"+R.drawable.android_intro_1,
-            "at Blore EG \n" +
-                    "we specialize in it construction and network infrastructure,offering"  +
-                    "comprehensive solutions to meet the connectivity needs of businesses and"  +
-                    "governmental institutions.")
+            resources.getString(R.string.second_intro_text))
 
         val servicesList = listOf(item1,item2)
         return servicesList

@@ -2,13 +2,68 @@
     <string name="app_name">Blore EG</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment" translatable="false">Hello blank fragment</string>
-    <!--    <string name="title">Impact the World \nby Taking Action</string>-->
-    <!--    <string name="androidDesc">Android Development Services \n We provide top-notch Android development services-->
-    <!--        \n Partner with us for innovative and reliable mobile solutions.-->
-    <!--    </string>-->
-    <!--    <string name="text_view_3">Objectively foster extensible scenarios and business innovation.-->
-    <!--Energistically predominate prospective experiences with strategic-->
-    <!--initiatives.</string>-->
+
+    <string name="welcome" >Welcome</string>
+    <string name="let_start" >let\'s Start </string>
+    <string name="fist_intro_text">Welcome To Blore EG \nYour Premier Provider Of IT Construction And Network Infrastructure Solutions In Egypt. </string>
+
+    <string name="second_intro_text">at Blore EG \n
+                    we specialize in it construction and network infrastructure,offering
+                    comprehensive solutions to meet the connectivity needs of businesses and
+                    governmental institutions.</string>
+
+    <string name="next">Next</string>
+    <string name="skip" >Skip</string>
+
+    <string name="about_us" >About Us</string>
+
+    <string name="general_services" >General Services</string>
+
+    <string name="about_us_paragraph" >Welcome To Blore EG, Your Premier Provider Of IT Construction And Network Infrastructure Solutions In Egypt. We Specialize In
+    Creating Robust And Reliable Network Architectures That Empower Businesses And Governmental Institutions To Thrive In The Digital
+    Era. With Our Deep Industry Knowledge And Cutting-Edge Technologies, We Deliver Scalable And Tailored Solutions That Meet Your
+    Unique Requirements. Our Commitment To Excellence And Customer Satisfaction Drives Us To Create Network Infrastructures That
+    Enable Seamless Operations, Effective Collaboration, And Continuous Innovation. Partner With Platinum And Let Us Build A Strong Andws
+    Reliable Network Infrastructure That Fuels Your Growth And Success In The Digital Age.
+    Go to Settings to activate Windows</string>
+    <string name="our_location" >Our Location :</string>
+    <string name="location" >El Dokkey / Cairo / Egypt</string>
+    <string name="join_us_on" >Join Us On </string>
+
+    <string name="general_service_paragraph" >At [ Blore EG ], we specialize in providing top-quality general finishing services that transform your spaces into stunning, polished environments. Our team of skilled professionals is dedicated to delivering meticulous craftsmanship and attention to detail in every project we undertake. Whether it’s residential, commercial, or industrial finishing, we offer a comprehensive range of services including painting, plastering, flooring, and more. By using premium materials and the latest techniques, we ensure that every surface is flawlessly finished to meet your exact specifications. Partner with us to enhance the beauty and functionality of your spaces with our reliable, efficient, and high-standard finishing solutions.</string>
+
+    <string name="contact_us">Contact Us </string>
+
+    <string name="always_here">Always Here Always Assist You  </string>
+
+    <string name="marketing_services">Marketing Service</string>
+    <string name="marketing_parahraph">At [ Blore EG ], we excel in delivering comprehensive marketing services designed to elevate your brand and drive business growth. Our team of seasoned marketing professionals is dedicated to crafting tailored strategies that resonate with your target audience and achieve measurable results. We specialize in a wide range of marketing solutions, including digital marketing, social media management, content creation, and SEO optimization. By leveraging data-driven insights and the latest industry trends, we ensure that your marketing campaigns are not only innovative but also effective. Partner with us to enhance your brand visibility, engage your customers, and achieve your business objectives with precision and creativity.</string>
+
+    <string name="mobile_app_services">Mobile App Service</string>
+    <string name="mobile_app_paagraph">At [Blore EG ], we specialize in delivering top-notch Android development services that transform your innovative ideas into fully functional,user-friendly applications. Our expertise lies in leveraging cutting-edge technologies like Flutter and Firebase to create seamless,high-performance apps tailored to meet your unique business needs.We pride ourselves on our ability to design intuitive and aesthetically pleasing user interfaces that enhance user engagement and satisfaction.By staying abreast of the latest industry trends and continuously expanding our skill set,we ensure that our solutions are not only current but also innovative.Partner with us to bring your app vision to life and make a significant impact in the digital world.</string>
+    <string name="network_services">Network Service</string>
+    <string name="security_services">Security Services</string>
+    <string name="security_paragraph">At [ Blore EG ], we are dedicated to providing state-of-the-art security systems that ensure the safety and peace of mind of our clients. Our comprehensive solutions include advanced surveillance cameras, motion sensors, and smart home integration, all designed to offer robust protection for your property. With our cutting-edge technology, you can monitor your premises in real-time from anywhere, receive instant alerts, and control your security system remotely through intuitive mobile apps. We pride ourselves on delivering reliable, scalable, and user-friendly security solutions that are tailored to meet the unique needs of each client. Partner with us to safeguard your home or business with the highest level of security and innovation.</string>
+    <string name="marketing">Marketing</string>
+    <string name="web_dev">Web Development</string>
+    <string name="mobile_app">Mobile App</string>
+    <string name="network">Network</string>
+    <string name="security_systems">Security Systems</string>
+    <string name="general">General</string>
+    <string name="video_editing">Video Editing</string>
+    <string name="services">Services</string>
+    <string name="dark_mode">Dark Mode</string>
+    <string name="arabic_language">Arabic Language</string>
+    <string name="settings">Settings</string>
+    <string name="version">Version 1.0.0</string>
+    <string name="video_service">Video Edit Service</string>
+    <string name="video_paragraph">At [ Blore EG ], we specialize in providing top-tier video editing services that transform your raw footage into compelling visual stories. Our team of skilled editors is dedicated to enhancing your content with professional-grade techniques, ensuring each video is polished, engaging, and aligned with your brand’s vision. We handle everything from basic cuts and transitions to advanced color grading, sound design, and special effects. By leveraging the latest editing software and staying updated with industry trends, we deliver videos that captivate your audience and elevate your digital presence. Partner with us to bring your creative vision to life and make a lasting impact with high-quality, visually stunning videos.</string>
+    <string name="web_development">Web Development Service</string>
+    <string name="web_paragraph">At [Blore EG ], we excel in providing comprehensive web development services that cater to your unique business needs. Our team of experienced developers is dedicated to creating secure, scalable, and responsive web applications that not only look visually appealing but also offer a seamless user experience. We specialize in crafting custom web solutions with user-centric UI/UX designs, ensuring that your website is both functional and engaging. By integrating the latest technologies and industry best practices, we deliver web applications that are robust, efficient, and tailored to drive your business forward. Partner with us to elevate your online presence and achieve your digital goals.</string>
+
+
+
+
     <string name="welcome_to_blore_agency">Welcome To Blore EG</string>
     <string name="networks_paragraph">At Blore EG, we specialize in comprehensive network installations, configurations, optimizations, and upgrades.
         Our expert team ensures seamless setup and integration of network systems tailored to meet your specific needs.
@@ -16,4 +71,6 @@
         while our optimization services focus on maximizing efficiency and minimizing downtime.
         Additionally, we offer upgrade solutions to keep your network infrastructure up-to-date with the latest technologies, ensuring robust and reliable connectivity.
         Trust us to deliver top-notch network services that drive your business forward.</string>
+    <string name="saved_high_score_key">" "</string>
+
 </resources>

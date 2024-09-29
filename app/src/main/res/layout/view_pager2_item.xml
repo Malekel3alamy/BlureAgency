@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layoutDirection="rtl"
     android:layout_width="match_parent"
-    android:background="@color/white_smoke"
+    style="@style/screen_background"
     android:layout_height="match_parent">
 
     <TextView
@@ -11,7 +11,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         app:layout_constraintTop_toBottomOf="@id/viewPagerImageView"
-        android:textColor="@color/gray"
+        style="@style/text_color_description"
         android:textSize="25sp"
         android:layout_marginTop="10dp"
         android:layout_marginStart="10dp"
@@ -19,7 +19,7 @@
         android:textAlignment="textStart"
         android:textStyle="bold"
         android:fontFamily="@font/alata"
-        android:text="let's Start "
+        android:text="@string/let_start"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
 
@@ -28,7 +28,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         app:layout_constraintTop_toBottomOf="@id/viewPagerItemDescription"
-        android:textColor="@color/gray"
+        style="@style/text_color_description"
         android:textSize="14sp"
         android:layout_marginTop="10dp"
         android:layout_marginStart="10dp"

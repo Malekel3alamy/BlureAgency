@@ -5,6 +5,9 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    style="@style/screen_background"
+    android:fillViewport="true"
+
     android:id="@+id/userFragment"
     tools:context=".ui.fragments.UserFragment">
 
@@ -12,151 +15,152 @@
        android:layout_width="match_parent"
        android:layout_height="wrap_content"
        >
+
+       <androidx.cardview.widget.CardView
+           android:id="@+id/user_details"
+           android:layout_width="match_parent"
+           android:layout_height="70dp"
+           app:cardCornerRadius="15dp"
+           android:layout_marginEnd="20dp"
+           app:layout_constraintStart_toStartOf="parent"
+           app:layout_constraintTop_toTopOf="parent"
+           android:layout_marginStart="10dp"
+           android:layout_marginTop="30dp"
+           >
+
+
+           <androidx.constraintlayout.widget.ConstraintLayout
+               android:layout_width="match_parent"
+               android:layout_height="match_parent"
+
+               >
+               <de.hdodenhof.circleimageview.CircleImageView
+                   android:id="@+id/user_image"
+                   android:layout_width="65dp"
+                   android:layout_height="65dp"
+                   android:src="@drawable/person"
+                   app:layout_constraintStart_toStartOf="parent"
+                   app:layout_constraintTop_toTopOf="parent"
+                   app:layout_constraintBottom_toBottomOf="parent"
+                   android:layout_marginStart="5dp"
+                   app:civ_border_width="2dp"
+                   app:civ_border_color="@color/gray"
+                   />
+               <TextView
+                   android:id="@+id/user_name_tv"
+                   android:layout_width="wrap_content"
+                   android:layout_height="wrap_content"
+                   android:text="Mahmoud Adel"
+                   android:textSize="20dp"
+                   style="@style/text_color"
+                   android:layout_marginStart="15dp"
+                   app:layout_constraintStart_toEndOf="@id/user_image"
+                   app:layout_constraintTop_toTopOf="parent"
+                   app:layout_constraintBottom_toBottomOf="parent"
+                   android:layout_gravity="center_vertical"
+                   />
+           </androidx.constraintlayout.widget.ConstraintLayout>
+       </androidx.cardview.widget.CardView>
+
+      <androidx.cardview.widget.CardView
+          android:id="@+id/settings"
+          android:layout_width="match_parent"
+          android:layout_height="48dp"
+          app:cardCornerRadius="10dp"
+          android:layout_marginEnd="20dp"
+          app:layout_constraintStart_toStartOf="parent"
+          app:layout_constraintTop_toBottomOf="@id/user_details"
+          android:layout_marginStart="10dp"
+          android:layout_marginTop="45dp"
+          >
+          <androidx.constraintlayout.widget.ConstraintLayout
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+
+              >
+              <ImageView
+                  android:id="@+id/setting_image"
+                  app:layout_constraintStart_toStartOf="parent"
+                  app:layout_constraintTop_toTopOf="parent"
+                  app:layout_constraintBottom_toBottomOf="parent"
+                  android:layout_width="35dp"
+                  android:layout_height="35dp"
+                  style="@style/icon_setting"
+                  android:scaleType="centerCrop"
+                  android:layout_marginStart="5dp"
+                  />
+              <TextView
+                  android:layout_width="wrap_content"
+                  android:layout_height="wrap_content"
+                  android:text="@string/settings"
+                  android:textSize="20dp"
+                  style="@style/text_color"
+                  android:layout_gravity="center_vertical"
+                  app:layout_constraintStart_toEndOf="@id/setting_image"
+                  app:layout_constraintTop_toTopOf="parent"
+                  app:layout_constraintBottom_toBottomOf="parent"
+                  android:layout_marginStart="10dp"
+                  />
+          </androidx.constraintlayout.widget.ConstraintLayout>
+      </androidx.cardview.widget.CardView>
+
+       <androidx.cardview.widget.CardView
+           android:id="@+id/about"
+           android:layout_width="match_parent"
+           android:layout_height="48dp"
+           app:cardCornerRadius="10dp"
+           android:layout_marginEnd="20dp"
+           app:layout_constraintStart_toStartOf="parent"
+           app:layout_constraintTop_toBottomOf="@id/settings"
+           android:layout_marginStart="10dp"
+           android:layout_marginTop="10dp"
+           >
+          <androidx.constraintlayout.widget.ConstraintLayout
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              >
+              <ImageView
+                  android:id="@+id/info"
+                  android:layout_width="35dp"
+                  android:layout_height="35dp"
+                  android:src="@drawable/info_light"
+                  android:scaleType="centerCrop"
+                  android:layout_marginStart="5dp"
+                  app:layout_constraintStart_toStartOf="parent"
+                  app:layout_constraintTop_toTopOf="parent"
+                  app:layout_constraintBottom_toBottomOf="parent"
+                  />
+              <TextView
+                  android:layout_width="wrap_content"
+                  android:layout_height="wrap_content"
+                  android:text="@string/about_us"
+                  android:textSize="20dp"
+                  style="@style/text_color"
+                  android:layout_marginStart="5dp"
+                  app:layout_constraintTop_toTopOf="parent"
+                  app:layout_constraintBottom_toBottomOf="parent"
+                  app:layout_constraintStart_toEndOf="@id/info"
+                  android:drawablePadding="10dp"
+                  android:layout_gravity="center_vertical"
+                  />
+          </androidx.constraintlayout.widget.ConstraintLayout>
+       </androidx.cardview.widget.CardView>
+
        <TextView
-           android:id="@+id/about_us_tv"
            android:layout_width="wrap_content"
            android:layout_height="wrap_content"
-           android:text="About Us"
-           android:textColor="@color/black"
-           app:layout_constraintTop_toTopOf="parent"
-           android:textSize="22sp"
-           android:textStyle="bold"
-           android:layout_marginStart="5dp"
-           android:layout_marginTop="115dp"
-           app:layout_constraintStart_toStartOf="parent"
-           />
-       <TextView
-           android:id="@+id/brief_tv"
-           android:layout_width="match_parent"
-           android:layout_height="wrap_content"
-           android:text="Welcome To Blore EG, Your Premier Provider Of IT Construction And Network Infrastructure Solutions In Egypt. We Specialize In
-Creating Robust And Reliable Network Architectures That Empower Businesses And Governmental Institutions To Thrive In The Digital
-Era. With Our Deep Industry Knowledge And Cutting-Edge Technologies, We Deliver Scalable And Tailored Solutions That Meet Your
-Unique Requirements. Our Commitment To Excellence And Customer Satisfaction Drives Us To Create Network Infrastructures That
-Enable Seamless Operations, Effective Collaboration, And Continuous Innovation. Partner With Platinum And Let Us Build A Strong Andws
-Reliable Network Infrastructure That Fuels Your Growth And Success In The Digital Age.
-Go to Settings to activate Windows"
-           android:layout_marginTop="10dp"
-           android:textSize="15sp"
-           android:textColor="@color/gray"
-           app:layout_constraintTop_toBottomOf="@id/about_us_tv"
-           android:padding="5dp"
-           android:layout_marginStart="5dp"
-           android:layout_marginEnd="5dp"
+           android:text="@string/version"
            app:layout_constraintStart_toStartOf="parent"
            app:layout_constraintEnd_toEndOf="parent"
-           android:fontFamily="@font/inter_medium"
-           />
-
-
-
-
-
-
-
-       <TextView
-           android:id="@+id/our_location_tv"
-           android:layout_width="wrap_content"
-           android:layout_height="wrap_content"
-           android:text="Our Location :"
-           android:textColor="@color/black"
-           app:layout_constraintTop_toBottomOf="@id/brief_tv"
-           android:textSize="22sp"
-           android:textStyle="bold"
-           android:layout_marginStart="5dp"
-           android:layout_marginTop="15dp"
-           app:layout_constraintStart_toStartOf="parent"
-           />
-
-       <TextView
-           android:id="@+id/location_tv"
-           android:layout_width="wrap_content"
-           android:layout_height="wrap_content"
-           android:text="El Dokkey / Cairo / Egypt "
+           app:layout_constraintTop_toBottomOf="@id/about"
+           android:layout_marginTop="50dp"
+           android:textSize="15dp"
            android:textColor="@color/gray"
-           app:layout_constraintTop_toBottomOf="@id/our_location_tv"
-           android:textSize="20sp"
-           android:fontFamily="@font/inter_medium"
-           android:layout_marginStart="5dp"
-           android:layout_marginTop="15dp"
-           app:layout_constraintStart_toStartOf="parent"
-           />
+           app:layout_constraintBottom_toBottomOf="parent"
 
-       <TextView
-           android:id="@+id/join_us_tv"
-           android:layout_width="wrap_content"
-           android:layout_height="wrap_content"
-           android:text="Join Us On "
-           android:textColor="@color/black"
-           app:layout_constraintTop_toBottomOf="@id/location_tv"
-           android:textSize="24sp"
-           android:textStyle="bold"
-           android:fontFamily="@font/inter_medium"
-           android:layout_marginStart="5dp"
-           android:layout_marginTop="20dp"
-           app:layout_constraintStart_toStartOf="parent"
-           />
-       <LinearLayout
-           android:layout_width="wrap_content"
-           android:layout_height="wrap_content"
-           app:layout_constraintStart_toStartOf="parent"
-           app:layout_constraintTop_toBottomOf="@id/join_us_tv"
-           android:orientation="horizontal"
-           >
-           <com.google.android.material.imageview.ShapeableImageView
-               android:layout_width="60dp"
-               android:layout_height="60dp"
-               android:id="@+id/facebook"
-               android:paddingTop="15dp"
-               app:shapeAppearanceOverlay="@style/ImageRoundedCorners"
-               android:scaleType="centerCrop"
-               android:layout_margin="2dp"
-               app:layout_constraintTop_toBottomOf="@id/join_us_tv"
-               app:layout_constraintStart_toStartOf="parent"
-               android:paddingStart="15dp"
-               android:src="@drawable/facebook"
-               />
+/>
 
-           <com.google.android.material.imageview.ShapeableImageView
-               android:layout_width="60dp"
-               android:layout_height="60dp"
-               android:id="@+id/instegram"
-               android:paddingTop="15dp"
-               app:shapeAppearanceOverlay="@style/ImageRoundedCorners"
-               android:scaleType="centerCrop"
-               android:layout_margin="2dp"
-               app:layout_constraintTop_toBottomOf="@id/join_us_tv"
-               app:layout_constraintStart_toStartOf="parent"
-               android:paddingStart="15dp"
-               android:src="@drawable/instagram"
-               />
-           <com.google.android.material.imageview.ShapeableImageView
-               android:layout_width="60dp"
-               android:layout_height="60dp"
-               android:id="@+id/whats_up"
-               android:paddingTop="15dp"
-               app:shapeAppearanceOverlay="@style/ImageRoundedCorners"
-               android:scaleType="centerCrop"
-               android:layout_margin="2dp"
-               app:layout_constraintTop_toBottomOf="@id/join_us_tv"
-               app:layout_constraintStart_toStartOf="parent"
-               android:paddingStart="15dp"
-               android:src="@drawable/whatsapp"
-               />
-           <com.google.android.material.imageview.ShapeableImageView
-               android:layout_width="60dp"
-               android:layout_height="60dp"
-               android:id="@+id/linked_in"
-               android:paddingTop="15dp"
-               app:shapeAppearanceOverlay="@style/ImageRoundedCorners"
-               android:scaleType="centerCrop"
-               android:layout_margin="2dp"
-               app:layout_constraintTop_toBottomOf="@id/join_us_tv"
-               app:layout_constraintStart_toStartOf="parent"
-               android:paddingStart="15dp"
-               android:src="@drawable/linkedin"
-               />
-       </LinearLayout>
+
    </androidx.constraintlayout.widget.ConstraintLayout>
 
 </androidx.core.widget.NestedScrollView>

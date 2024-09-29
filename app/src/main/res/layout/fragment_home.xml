@@ -7,51 +7,78 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/homeFragment"
     tools:context=".ui.fragments.HomeFragment"
-    android:background="@color/white"
+    style="@style/screen_background"
     >
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginBottom="100dp"
         >
-
-        <TextView
-            android:id="@+id/link_your_world"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Link Your World"
-            android:fontFamily="@font/alata"
-            android:textSize="25dp"
+        <com.google.android.material.imageview.ShapeableImageView
+            android:id="@+id/home_image_1"
+            android:layout_width="350dp"
+            android:layout_height="250dp"
+            android:layout_marginTop="40dp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            android:layout_marginTop="25dp"
+            android:src="@drawable/meeting_2"
             />
         <TextView
             android:id="@+id/blore_eg"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="With Blore EG "
-            android:textSize="25dp"
+            android:text="@string/always_here"
+            android:textSize="22dp"
+            android:layout_marginTop="15dp"
             android:fontFamily="@font/alata"
-            app:layout_constraintTop_toBottomOf="@id/link_your_world"
+            app:layout_constraintTop_toBottomOf="@id/home_image_1"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             />
 
-        <com.google.android.material.imageview.ShapeableImageView
-            android:id="@+id/home_image_1"
-            android:layout_width="350dp"
-            android:layout_height="250dp"
-            app:layout_constraintStart_toStartOf="parent"
+
+<androidx.cardview.widget.CardView
+    android:id="@+id/whats_up_card_view"
+    android:layout_width="100dp"
+    android:layout_height="100dp"
+    style="@style/home_cards_background"
+    app:cardCornerRadius="70dp"
+    app:cardElevation="25dp"
+    app:layout_constraintBottom_toBottomOf="parent"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toBottomOf="@id/blore_eg"
+    android:layout_marginTop="50dp"
+    android:layout_marginStart="40dp"
+    android:layout_marginBottom="50dp"
+    >
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:src="@drawable/whatsapp"
+        android:layout_margin="20dp"
+        />
+</androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/offer_card_view"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            app:cardElevation="25dp"
+            app:cardCornerRadius="70dp"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintTop_toBottomOf="@id/blore_eg"
-            android:src="@drawable/meeting_2"
-            />
-
-
-
-
+            android:layout_marginTop="50dp"
+            android:layout_marginEnd="40dp"
+            android:layout_marginBottom="50dp"
+            >
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:src="@drawable/offer"
+                />
+        </androidx.cardview.widget.CardView>
 
 
 

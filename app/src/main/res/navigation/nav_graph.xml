@@ -13,6 +13,9 @@
         <action
             android:id="@+id/action_homeFragment_to_servicesFragment"
             app:destination="@id/servicesFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_offersFragment2"
+            app:destination="@id/offersFragment2" />
     </fragment>
     <fragment
         android:id="@+id/servicesFragment"
@@ -48,7 +51,14 @@
         android:id="@+id/userFragment"
         android:name="com.example.blureagency.ui.fragments.UserFragment"
         android:label="fragment_user"
-        tools:layout="@layout/fragment_user" />
+        tools:layout="@layout/fragment_user" >
+        <action
+            android:id="@+id/action_userFragment_to_settingFragment"
+            app:destination="@id/settingFragment" />
+        <action
+            android:id="@+id/action_userFragment_to_aboutFragment"
+            app:destination="@id/aboutFragment" />
+    </fragment>
     <fragment
         android:id="@+id/contactUsFragment"
         android:name="com.example.blureagency.ui.fragments.ContactUsFragment"
@@ -93,4 +103,19 @@
         android:name="com.example.blureagency.ui.fragments.services.MarketingFragment"
         android:label="fragment_marketing"
         tools:layout="@layout/fragment_marketing" />
+    <fragment
+        android:id="@+id/settingFragment"
+        android:name="com.example.blureagency.ui.fragments.user.SettingFragment"
+        android:label="fragment_setting"
+        tools:layout="@layout/fragment_setting" />
+    <fragment
+        android:id="@+id/aboutFragment"
+        android:name="com.example.blureagency.ui.fragments.user.AboutFragment"
+        android:label="fragment_about"
+        tools:layout="@layout/fragment_about" />
+    <fragment
+        android:id="@+id/offersFragment2"
+        android:name="com.example.blureagency.ui.fragments.OffersFragment"
+        android:label="fragment_offers"
+        tools:layout="@layout/fragment_offers" />
 </navigation>
