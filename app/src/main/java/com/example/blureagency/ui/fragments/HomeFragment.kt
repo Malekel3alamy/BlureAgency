@@ -30,10 +30,8 @@ class HomeFragment : Fragment(R.layout.fragment_home) {
 
         binding.whatsUpCardView.setOnClickListener {
 
-            val intent  =  Intent(Intent.ACTION_VIEW)
-            intent.setData(Uri.parse("http://api.whatsapp.com/send?phone="+"+20"+"1281504887"+"&text="+""))
-            startActivity(intent)
-        /*    val package_manager = (activity as MainActivity).packageManager
+
+       /*    val package_manager = (activity as MainActivity).packageManager
             val uri = Uri.parse("smsto"+"+2001093107879")
             val intent = Intent(Intent.ACTION_SENDTO,uri)
             intent.`package`="com.whatsapp"
@@ -43,13 +41,16 @@ class HomeFragment : Fragment(R.layout.fragment_home) {
                 Toast.makeText(requireContext(),"Whats app is Not Installed ",Toast.LENGTH_SHORT).show()
             }*/
 
-           /* if (isPackageInstalled(requireContext(),"com.whatsapp") ||
+            if (isPackageInstalled(requireContext(),"com.whatsapp") ||
                 isPackageInstalled(requireContext(),"com.whatsapp.w4b")){
 
+                val intent  =  Intent(Intent.ACTION_VIEW)
+                intent.setData(Uri.parse("http://api.whatsapp.com/send?phone="+"+20"+"1281504887"+"&text="+""))
+                startActivity(intent)
             }else{
                 Toast.makeText(requireContext(),"Whats app is Not Installed ",Toast.LENGTH_SHORT).show()
             }
-*/
+
         }
 
         binding.offerCardView.setOnClickListener {
