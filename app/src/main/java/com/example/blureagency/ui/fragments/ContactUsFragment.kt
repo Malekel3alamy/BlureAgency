@@ -9,4 +9,5 @@ import com.example.blureagency.R
 
 class ContactUsFragment : Fragment(R.layout.fragment_contact_us) {
 
+
 }

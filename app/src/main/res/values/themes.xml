@@ -21,6 +21,12 @@
     <style name="screen_background"><item name="android:background">@color/white_smoke</item></style>
     <style name="image_card_view_background"><item name="android:background">@color/white</item></style>
     <style name="icon_setting"><item name="android:src">@drawable/setting_light</item></style>
+
+    <style name="edit_text_style"><item name="android:background">@drawable/edit_text_bg_light</item>
+    <item name="android:textColorHint">@color/gray</item>
+
+    </style>
+
     <style name="icon_language"><item name="android:src">@drawable/language_light</item></style>
     <style name="home_cards_background"><item name="android:background">@color/white</item></style>
     <style name="text_color_description"><item name="android:textColor">@color/gray</item></style>

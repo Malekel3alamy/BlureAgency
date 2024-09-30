@@ -1,6 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_name">BloreAgency</string>
+
+
+
     <string name="welcome_to_blore_agency">مرحبا بك فى Blore EG</string>
     <string name="let_start" >هيا لنبدأ</string>
     <string name="fist_intro_text">مرحبًا بكم في Blore EG
@@ -89,7 +92,12 @@
 كفاءة، ومصممة لدفع عملك إلى الأمام. شاركنا لرفع مستوى وجودك عبر الإنترنت وتحقيق أهدافك الرقمية.
     </string>
 
-
+// Contact Fragment
+    <string name="we_are_happy"> يسعدنا خدمتك</string>
+    <string name="enter_your_email" >أدخل البريد الالكترونى</string>
+    <string name="enter_your_phone" >أدخل رقم الهاتف</string>
+    <string name="choose_service" >اختر خدمة</string>
+    <string name="enter_your_message" >أدخل رسالتك</string>
 
 
 
