@@ -11,6 +11,7 @@ import com.example.blureagency.models.ViewPagerServie
 class StartActivity : AppCompatActivity() {
     private lateinit var binding:ActivityStartActivtyBinding
     private lateinit var viewPagerAdapter:ViewPagerAdapter
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityStartActivtyBinding.inflate(layoutInflater)
