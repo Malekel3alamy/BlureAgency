@@ -7,54 +7,85 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".ui.fragments.ContactUsFragment">
-    <TextView
-        android:id="@+id/contact_fragment_tv"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/we_are_happy"
+<!--    <TextView-->
+<!--        android:id="@+id/contact_fragment_tv"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:text="@string/we_are_happy"-->
+<!--        app:layout_constraintStart_toStartOf="parent"-->
+<!--        app:layout_constraintEnd_toEndOf="parent"-->
+<!--        app:layout_constraintTop_toTopOf="parent"-->
+<!--        android:textSize="25dp"-->
+<!--        android:fontFamily="@font/alata"-->
+<!--        android:textStyle="bold"-->
+<!--        android:layout_marginTop="50dp"-->
+<!--        />-->
+    <ImageView
+        android:layout_width="250dp"
+        android:layout_height="120dp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        android:textSize="25dp"
-        android:fontFamily="@font/alata"
-        android:textStyle="bold"
-        android:layout_marginTop="50dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:src="@drawable/contact_image"
+        android:layout_marginTop="10dp"
+        android:scaleType="centerInside"
         />
 
-    <androidx.appcompat.widget.AppCompatEditText
-        android:id="@+id/email_et"
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/email_layout"
         android:layout_width="match_parent"
-        android:layout_height="65dp"
-        style="@style/edit_text_style"
-        android:gravity="center"
+        android:layout_height="wrap_content"
         android:hint="@string/enter_your_email"
-        android:inputType="textEmailAddress"
+        app:endIconMode="clear_text"
+        style="@style/ThemeOverlay.Material3.TextInputEditText.OutlinedBox"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/guideline3"
         android:layout_marginStart="20dp"
         android:layout_marginEnd="20dp"
-        />
+        android:layout_marginTop="25dp"
+        app:startIconDrawable="@drawable/email_icon"
+app:errorEnabled="true"
+        >
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/email_et"
+            android:layout_width="match_parent"
+            android:layout_height="55dp"
+            android:inputType="textEmailAddress"
 
-    <androidx.appcompat.widget.AppCompatEditText
-        android:id="@+id/phone_number_et"
+            />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/phone_number_layout"
         android:layout_width="match_parent"
-        android:layout_height="65dp"
-        style="@style/edit_text_style"
-        android:gravity="center"
+        android:layout_height="wrap_content"
         android:hint="@string/enter_your_phone"
-        android:inputType="phone"
+
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/email_et"
+        app:layout_constraintTop_toBottomOf="@id/email_layout"
         android:layout_marginTop="7dp"
         android:layout_marginStart="20dp"
         android:layout_marginEnd="20dp"
-        />
-    <androidx.appcompat.widget.AppCompatEditText
-        android:id="@+id/service_et"
+       app:startIconDrawable="@drawable/phone_icon"
+        app:endIconMode="clear_text"
+        app:errorEnabled="true"
+        >
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/phone_number_et"
+            android:layout_width="match_parent"
+            android:layout_height="55dp"
+            android:inputType="phone"
+
+            />
+    </com.google.android.material.textfield.TextInputLayout>
+    <Spinner
+        android:id="@+id/service_spinner"
         android:layout_width="match_parent"
-        android:layout_height="65dp"
+        android:layout_height="55dp"
         style="@style/edit_text_style"
         android:gravity="center"
         android:hint="@string/choose_service"
@@ -62,39 +93,37 @@
         android:layout_marginTop="7dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/phone_number_et"
+        app:layout_constraintTop_toBottomOf="@id/phone_number_layout"
         android:layout_marginStart="20dp"
         android:layout_marginEnd="20dp"
         />
 
-    <com.reginald.editspinner.EditSpinner
-        android:id="@+id/edit_spinner"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        app:dropDownDrawable="@drawable/spinner_icon"
-        app:dropDownDrawableSpacing="15dp"
-        app:dropDownDrawableWidth="25dp"
-        app:dropDownDrawableHeight="25dp"
-        />
+
     <androidx.appcompat.widget.AppCompatEditText
         android:id="@+id/message_et"
         android:layout_width="match_parent"
-        android:layout_height="250dp"
+        android:layout_height="220dp"
         style="@style/edit_text_style"
         android:gravity="center_horizontal"
         android:paddingTop="7dp"
-        android:inputType="textAutoCorrect"
+        android:inputType="textMultiLine"
         android:hint="@string/enter_your_message"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/service_et"
+        app:layout_constraintTop_toBottomOf="@id/service_spinner"
         android:layout_marginTop="7dp"
         android:layout_marginStart="20dp"
         android:layout_marginEnd="20dp"
+        android:singleLine="false"
+        android:padding="5dp"
+        app:barrierAllowsGoneWidgets="false"
+        android:marqueeRepeatLimit="@integer/material_motion_duration_short_1"
         />
 
+
+
     <androidx.appcompat.widget.AppCompatButton
-        android:id="@+id/networkFragment_contact_us_btn"
+        android:id="@+id/contactFragment_contact_us_btn"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="@string/contact_us"
@@ -113,7 +142,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.23" />
+        app:layout_constraintGuide_percent="0.16" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

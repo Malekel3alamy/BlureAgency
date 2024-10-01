@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item android:title="Services"
+        android:id="@+id/service"
+        />
+    <item android:title="Mobile App" />
+    <item android:title="Webb App" />
+    <item android:title="Marketing" />
+    <item android:title="Video Edit" />
+    <item android:title="Security" />
+    <item android:title="Networks" />
+    <item android:title="General" />
+</menu>

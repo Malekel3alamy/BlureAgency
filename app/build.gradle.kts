@@ -1,3 +1,5 @@
+import java.util.regex.Pattern.compile
+
 plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.jetbrains.kotlin.android)
@@ -39,6 +41,13 @@ android {
     kotlinOptions {
         jvmTarget = "1.8"
     }
+
+    packagingOptions {
+        resources.excludes += "META-INF/LICENSE*"
+        resources.excludes += "META-INF/NOTICE*"
+    }
+
+
 }
 
 dependencies {
@@ -66,8 +75,9 @@ dependencies {
     // Circular Image
     implementation ("de.hdodenhof:circleimageview:3.1.0")
 
-    // Edit Text With Spinner
-    implementation ("com.reginald:editspinner:1.1.0")
+
+
+    implementation("io.github.nurujjamanpollob.androidmailer:androidmailer:2.2.3")
 
 
     testImplementation(libs.junit)
