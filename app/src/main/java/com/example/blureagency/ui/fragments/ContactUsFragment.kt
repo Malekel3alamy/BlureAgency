@@ -3,6 +3,7 @@ package com.example.blureagency.ui.fragments
 import android.content.Intent
 import android.net.Uri
 import android.os.Bundle
+import android.os.StrictMode
 import android.text.Editable
 import android.text.TextWatcher
 import android.util.Log
@@ -11,8 +12,16 @@ import android.widget.AdapterView
 import android.widget.ArrayAdapter
 import android.widget.Toast
 import androidx.fragment.app.Fragment
+import androidx.fragment.app.viewModels
+import androidx.lifecycle.Observer
+import androidx.lifecycle.lifecycleScope
+import androidx.recyclerview.widget.RecyclerView
 import com.example.blureagency.R
 import com.example.blureagency.databinding.FragmentContactUsBinding
+import com.example.blureagency.ui.viewmodel.ContactViewMode
+import com.example.movies.utils.Resources
+import dagger.hilt.android.AndroidEntryPoint
+import kotlinx.coroutines.launch
 import java.util.Properties
 import javax.mail.Authenticator
 import javax.mail.Message
@@ -23,13 +32,11 @@ import javax.mail.Transport
 import javax.mail.internet.InternetAddress
 import javax.mail.internet.MimeMessage
 
-import dev.nurujjamanpollob.javamailer.entity.Attachment;
-import dev.nurujjamanpollob.javamailer.sender.MailSendWrapper;
-import dev.nurujjamanpollob.javamailer.sender.Provider;
-import dev.nurujjamanpollob.javamailer.sender.Providers;
 
-
+@AndroidEntryPoint
 class ContactUsFragment : Fragment(R.layout.fragment_contact_us) {
+
+    private val contactViewModel by viewModels<ContactViewMode>()
 private lateinit var binding: FragmentContactUsBinding
 lateinit var  adapter : ArrayAdapter<String>
 
@@ -38,26 +45,12 @@ lateinit var  adapter : ArrayAdapter<String>
 
 
 
-    private val MAIL_SENDER_SEND_FROM_ADDRESS = "fromaddress@domain.com";
-    private val MAIL_HOST = "mail.domain.com";
-    private val MAIL_PASSWORD = "mailbosspasswordhere";
-    private val smtpPortAddress = "465";
-    private val socketFactoryPortAddress = "465";
-    private val receiverMailAdd = "receiver@domain.com";
-    private val subject = "Mail subject goes here";
-    private val message = "Mail message body goes here, supports HTML markup";
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         binding = FragmentContactUsBinding.bind(view)
 
          setupSpinner()
-
-
-
-
-
-
 
 
         binding.serviceSpinner.onItemSelectedListener = object :AdapterView.OnItemSelectedListener{
@@ -71,9 +64,8 @@ lateinit var  adapter : ArrayAdapter<String>
         }
 
 binding.contactFragmentContactUsBtn.setOnClickListener {
+setupEmptyInputError()
 
-
-    send()
 
 
     val email = binding.emailEt.text.toString()
@@ -86,17 +78,43 @@ binding.contactFragmentContactUsBtn.setOnClickListener {
         Toast.makeText(requireContext(),resources.getString(R.string.make_sure_to_enter_all_fields),Toast.LENGTH_SHORT).show()
     }else{
 
+val receptient = message.plus(" and Client Phone Number : $phone and Client Email : $email")
+
+        contactViewModel.send(requireContext(),"mhmoodadel1899@gmail.com",receptient,customer_service)
 
 
+        lifecycleScope.launch {
+            contactViewModel.clientMessageStatus.observe(viewLifecycleOwner,Observer{
+                when(it){
+                    is Resources.Error -> {
+                        hidePR()
+                        Toast.makeText(requireContext(),"Sorry Failed To Send Message",Toast.LENGTH_SHORT).show()
+                    }
+                    is Resources.Loading -> {
+                      showPR()
+                    }
+                    is Resources.Success -> {
+                        hidePR()
 
-       val intent = Intent(Intent.ACTION_SENDTO)
+                        Toast.makeText(requireContext(),"Sending message Succeeded ",Toast.LENGTH_SHORT).show()
+                          clearData()
+                    }
+                }
+            })
+        }
+
+
+     /*
+
+     // send using gmail and intent
+     val intent = Intent(Intent.ACTION_SENDTO)
         intent.setData(Uri.parse("mailto:"))
         intent.putExtra(Intent.EXTRA_EMAIL,email)
         intent.putExtra(Intent.EXTRA_SUBJECT,customer_service)
         intent.putExtra(Intent.EXTRA_TEXT,message)
 
 
-        startActivity(Intent.createChooser(intent,"Choose an Email client :"))
+        startActivity(Intent.createChooser(intent,"Choose an Email client :"))*/
 
     }
 }
@@ -106,6 +124,16 @@ binding.contactFragmentContactUsBtn.setOnClickListener {
 
 
 
+    }
+
+    private fun showPR(){
+        binding.contactBtnPr.visibility = View.VISIBLE
+        binding.contactFragmentContactUsBtn.visibility=View.INVISIBLE
+    }
+
+    private fun hidePR(){
+        binding.contactBtnPr.visibility = View.INVISIBLE
+        binding.contactFragmentContactUsBtn.visibility=View.VISIBLE
     }
 
     private fun setupEmptyInputError(){
@@ -160,82 +188,13 @@ binding.contactFragmentContactUsBtn.setOnClickListener {
         binding.serviceSpinner.adapter = adapter
     }
 
-    fun send() {
-
-
-          val MAIL_SENDER_SEND_FROM_ADDRESS = "mahmoudalataly1234@gmail.com"
-         val MAIL_HOST = "mail.domain.com"
-         val MAIL_PASSWORD = "mailbosspasswordhere"
-         val smtpPortAddress = "465"
-         val socketFactoryPortAddress = "465"
-        var receiverMailAdd = "mhmood_adel1899@gmail.com"
-         var subject = "Mail subject goes here"
-         var message = "Mail message body goes here, supports HTML markup"
-
-// to create Attachment instance from android intent Uri, keep following
-         var attachment: Attachment? = Attachment(byteArrayOf(), "fileNameIncludingExtension", "fileMimeType")
-
-// Create service provider configuration
-        val serviceProviderConfig = Provider(
-            MAIL_HOST, // SMTP Host name
-            smtpPortAddress, // SMTP Host port number
-            socketFactoryPortAddress, // java mail socket factory address, should be same as smtp port
-            Providers.getSecureSocketFactoryName(), // Java secure socket factory name
-            true, // use auth or no flag
-            true // Use TLS to securely transfer mail flag
-        )
-
-        /*
-        Basic mail credentials is provided, if you need to provide additional mail properties,
-        use: serviceProviderConfig.putConfiguration(String propertyKey, String propertyValue);
-        This can also be used to Override current mail service configuration
-        */
-
-// send email to server using wrapper
-        val mailSendWrapper = MailSendWrapper(
-            MAIL_SENDER_SEND_FROM_ADDRESS, // Set from address
-            receiverMailAdd, // Receiver mail address
-            MAIL_PASSWORD, // Mail box password for authorization purposes
-            subject, // Mail subject
-            message, // Mail body, supports HTML markup
-            serviceProviderConfig // Service provider configuration
-        )
-
-// Listen to event
-        mailSendWrapper.setMailSendEventListener(object : MailSendWrapper.MessageSendListener {
-
-            // Invokes when the background thread started running
-            override fun whileSendingEmail() {
-                Toast.makeText(requireContext(), "Sending Mail...", Toast.LENGTH_SHORT).show()
-            }
-
-            // Invokes when the mail sender plugin finishes sending email
-            override fun onEmailSent(toRecipientAddress: String) {
-                // reset attachment
-                attachment = null
-                Toast.makeText(requireContext(), "Mail sent to $toRecipientAddress", Toast.LENGTH_SHORT).show()
-            }
-
-            // Invokes when mail sending fails
-            override fun onEmailSendFailed(errorMessage: String) {
-                // reset attachment
-                attachment = null
-                Toast.makeText(requireContext(), "Mail send Exception $errorMessage", Toast.LENGTH_SHORT).show()
-            }
-        })
-
-// Send email to client
-// When attachment is not null
-// Call mailSendWrapper.setSendFileWithAttachment(attachment); to send the attached attachment
-        if (attachment != null && attachment!!.isAttachmentNotNull()) {
-            mailSendWrapper.setSendFileWithAttachment(attachment)
-        } else {
-            // When attachment is null
-            mailSendWrapper.doSendEmailToFollowingClient()
-        }
-
-
-
+    private fun clearData(){
+        binding.emailEt.setText(" ")
+        binding.messageEt.setText(" ")
+        binding.phoneNumberEt.setText(" ")
+        binding.serviceSpinner.setPromptId(0)
     }
+
+
 
 }

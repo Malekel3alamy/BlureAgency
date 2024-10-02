@@ -102,7 +102,7 @@ app:errorEnabled="true"
     <androidx.appcompat.widget.AppCompatEditText
         android:id="@+id/message_et"
         android:layout_width="match_parent"
-        android:layout_height="220dp"
+        android:layout_height="190dp"
         style="@style/edit_text_style"
         android:gravity="center_horizontal"
         android:paddingTop="7dp"
@@ -120,6 +120,17 @@ app:errorEnabled="true"
         android:marqueeRepeatLimit="@integer/material_motion_duration_short_1"
         />
 
+
+<ProgressBar
+    android:id="@+id/contact_btn_pr"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    app:layout_constraintStart_toStartOf="@id/contactFragment_contact_us_btn"
+    app:layout_constraintEnd_toEndOf="@id/contactFragment_contact_us_btn"
+    app:layout_constraintTop_toTopOf="@id/contactFragment_contact_us_btn"
+    app:layout_constraintBottom_toBottomOf="@id/contactFragment_contact_us_btn"
+    android:visibility="invisible"
+    />
 
 
     <androidx.appcompat.widget.AppCompatButton

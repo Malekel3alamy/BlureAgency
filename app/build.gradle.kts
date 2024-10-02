@@ -3,6 +3,9 @@ import java.util.regex.Pattern.compile
 plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.jetbrains.kotlin.android)
+
+    id("kotlin-kapt")
+    id("com.google.dagger.hilt.android")
 }
 
 android {
@@ -59,7 +62,7 @@ dependencies {
     implementation(libs.androidx.constraintlayout)
 
     // LottieFiles Animation
-    implementation ("com.airbnb.android:lottie:3.4.0")
+    implementation ("com.airbnb.android:lottie:6.5.2")
 
 
     // Navigation Components
@@ -70,17 +73,27 @@ dependencies {
     implementation("com.github.bumptech.glide:glide:5.0.0-rc01")
 
     // Dots Indicator
-    implementation("com.tbuonomo:dotsindicator:5.0")
+    implementation("com.tbuonomo:dotsindicator:5.1.0")
 
     // Circular Image
     implementation ("de.hdodenhof:circleimageview:3.1.0")
 
 
+    implementation("com.sun.mail:android-mail:1.6.7")
+    implementation("com.sun.mail:android-activation:1.6.7")
 
-    implementation("io.github.nurujjamanpollob.androidmailer:androidmailer:2.2.3")
+   // implementation("io.github.nurujjamanpollob.androidmailer:androidmailer:2.2.3")
 
+    // Dagger hilt
+    implementation("com.google.dagger:hilt-android:2.51.1")
+    kapt("com.google.dagger:hilt-android-compiler:2.51.1")
 
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
+}
+
+// Allow references to generated code
+kapt {
+    correctErrorTypes = true
 }
