@@ -78,7 +78,7 @@ setupEmptyInputError()
         Toast.makeText(requireContext(),resources.getString(R.string.make_sure_to_enter_all_fields),Toast.LENGTH_SHORT).show()
     }else{
 
-val receptient = message.plus(" and Client Phone Number : $phone and Client Email : $email")
+val receptient = message.plus("\n\n Client Phone Number : $phone \n\nClient Email : $email")
 
         contactViewModel.send(requireContext(),"mhmoodadel1899@gmail.com",receptient,customer_service)
 
@@ -192,7 +192,6 @@ val receptient = message.plus(" and Client Phone Number : $phone and Client Emai
         binding.emailEt.setText(" ")
         binding.messageEt.setText(" ")
         binding.phoneNumberEt.setText(" ")
-        binding.serviceSpinner.setPromptId(0)
     }
 
 

@@ -67,7 +67,7 @@ class ContactViewMode @Inject constructor():ViewModel() {
 
                 } catch (e: MessagingException) {
                     throw RuntimeException(e)
-                    clientMessageStatus.postValue(Resources.Error(e.message.toString()))
+                   // clientMessageStatus.postValue(Resources.Error(e.message.toString()))
                 }
 
                 val policy = StrictMode.ThreadPolicy.Builder().permitAll().build()
