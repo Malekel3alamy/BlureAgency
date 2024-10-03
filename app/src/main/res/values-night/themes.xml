@@ -19,10 +19,16 @@
     <style name="text_color_description"><item name="android:textColor">@color/silver</item></style>
 
     <style name="edit_text_style"><item name="android:background">@drawable/edit_text_bg_dark</item>
-        <item name="android:textColorHint">@color/silver</item>
+        <item name="android:textColorHint">@color/light_gray</item>
 
     </style>
 
+    <style name="TextInputLayoutStyle" parent="Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+        <item name="boxStrokeColor">@color/light_gray</item>
+        <item name="hintTextColor">@color/light_gray</item>
+        <item name="boxBackgroundColor">@color/black</item>
+        <item name="boxStrokeWidth">1dp</item>
+    </style>
     <style name="text_color"><item name="android:textColor">@color/white</item></style>
     <style name="bottom_nav"><item name="android:itemBackground">@color/black</item></style>
     <style name="splash_icon"><item name="android:src">@drawable/icon_white</item></style>

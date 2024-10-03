@@ -9,8 +9,8 @@
                 android:radius="500dp"/>
             <gradient
                 android:angle="225"
-                android:startColor="@color/silver"
-                android:endColor="@color/material_dynamic_primary60"
+                android:startColor="@color/light_gray"
+                android:endColor="@color/dark_gray2"
                 />
         </shape>
     </item>

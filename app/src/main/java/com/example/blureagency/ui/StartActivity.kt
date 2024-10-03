@@ -7,6 +7,7 @@ import com.example.blureagency.R
 import com.example.blureagency.adapters.ViewPagerAdapter
 import com.example.blureagency.databinding.ActivityStartActivtyBinding
 import com.example.blureagency.models.ViewPagerServie
+import com.example.blureagency.ui.fragments.auth.LoginActivity
 
 class StartActivity : AppCompatActivity() {
     private lateinit var binding:ActivityStartActivtyBinding
@@ -24,7 +25,7 @@ class StartActivity : AppCompatActivity() {
 
 
         binding.SkipBTN.setOnClickListener {
-            val intent = Intent(this,MainActivity::class.java)
+            val intent = Intent(this,LoginActivity::class.java)
             startActivity(intent)
         }
 
