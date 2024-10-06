@@ -6,6 +6,7 @@ plugins {
 
     id("kotlin-kapt")
     id("com.google.dagger.hilt.android")
+    id("com.google.devtools.ksp")
     alias(libs.plugins.google.gms.google.services)
 }
 
@@ -67,8 +68,8 @@ dependencies {
 
 
     // Navigation Components
-    implementation ("androidx.navigation:navigation-fragment-ktx:2.8.1")
-    implementation ("androidx.navigation:navigation-ui-ktx:2.8.1")
+    implementation ("androidx.navigation:navigation-fragment-ktx:2.8.2")
+    implementation ("androidx.navigation:navigation-ui-ktx:2.8.2")
 
     // Glide
     implementation("com.github.bumptech.glide:glide:5.0.0-rc01")
@@ -86,9 +87,22 @@ dependencies {
    // implementation("io.github.nurujjamanpollob.androidmailer:androidmailer:2.2.3")
 
     // Dagger hilt
-    implementation("com.google.dagger:hilt-android:2.51.1")
+    implementation("com.google.dagger:hilt-android:2.52")
     implementation(libs.firebase.auth)
-    kapt("com.google.dagger:hilt-android-compiler:2.51.1")
+    implementation(libs.firebase.firestore)
+    kapt("com.google.dagger:hilt-android-compiler:2.52")
+
+    // Room
+    implementation ("androidx.room:room-runtime:2.6.1")
+    ksp ("androidx.room:room-compiler:2.6.1")
+    // Kotlin Extensions and Coroutines support for Room
+    implementation ("androidx.room:room-ktx:2.6.1")
+
+    implementation ("com.google.android.material:material:1.12.0")
+
+// phone number picker
+    implementation("com.hbb20:ccp:2.7.3")
+
 
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
