@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "208518129172",
+    "project_id": "blureagency",
+    "storage_bucket": "blureagency.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:208518129172:android:dd539ea8133f2dbeb06901",
+        "android_client_info": {
+          "package_name": "com.example.blureagency"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBbby0obkj2EVF7UCpNkhEg7dCvsrnlf5Y"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

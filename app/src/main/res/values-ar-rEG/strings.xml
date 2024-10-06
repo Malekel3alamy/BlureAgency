@@ -102,4 +102,7 @@
 // login fragment
     <string name="login">تسجيل دخول</string>
 
+    // sign up fragment
+    <string name="sign_up">اشترك</string>
+
 </resources>
