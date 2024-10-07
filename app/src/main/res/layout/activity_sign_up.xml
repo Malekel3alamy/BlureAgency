@@ -62,15 +62,12 @@
         android:layout_height="wrap_content"
         android:textColor="@color/dark_gray2"
         android:fontFamily="@font/poppins_semibold"
-        android:text="user_name"
+        android:text="UserName"
         android:layout_marginStart="35dp"
         android:layout_marginTop="12dp"
         android:textSize="16sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/login_app_name_tv" />
-
-
-
     <EditText
         android:id="@+id/signup_user_name_et"
         android:layout_width="match_parent"
@@ -84,7 +81,7 @@
         android:drawableStart="@drawable/ic_person"
         android:drawablePadding="20dp"
         android:paddingStart="15dp"
-        android:inputType="textPassword"
+        android:inputType="text"
         android:paddingEnd="10dp"
         />
     <TextView

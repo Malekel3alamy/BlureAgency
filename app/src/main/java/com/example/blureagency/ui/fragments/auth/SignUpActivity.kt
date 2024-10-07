@@ -1,6 +1,7 @@
 package com.example.blureagency.ui.fragments.auth
 
 import android.os.Bundle
+import android.provider.Settings.Global
 import android.text.InputType
 import android.util.Log
 import android.view.View
@@ -11,17 +12,18 @@ import androidx.lifecycle.lifecycleScope
 import com.example.blureagency.R
 import com.example.blureagency.databinding.ActivitySignUpBinding
 import com.example.blureagency.model.User
-import com.example.blureagency.ui.viewmodel.AuthViewModel
+import com.example.blureagency.ui.viewmodel.SignupViewModel
 import com.example.movies.utils.Resources
 import dagger.hilt.android.AndroidEntryPoint
+import kotlinx.coroutines.delay
 import kotlinx.coroutines.flow.collectLatest
 import kotlinx.coroutines.launch
 
 @AndroidEntryPoint
 class SignUpActivity : AppCompatActivity(R.layout.activity_sign_up) {
-lateinit var binding :ActivitySignUpBinding
+private lateinit var binding :ActivitySignUpBinding
 
-private val authViewModel by viewModels<AuthViewModel>()
+private val signupViewModel by viewModels<SignupViewModel>()
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -33,22 +35,21 @@ private val authViewModel by viewModels<AuthViewModel>()
         // connect country code picker to edit text phone
 
         binding.ccp.registerCarrierNumberEditText(binding.signupPhoneNumberEt)
-
+        var isPasswordVisible = false
         binding.signupShowPassword.setOnClickListener {
-            var isPasswordVisible = false
+
             if (isPasswordVisible){
-               binding.signupPasswordEt.inputType =  InputType.TYPE_TEXT_VARIATION_PASSWORD // InputType.T
+               binding.signupPasswordEt.inputType = InputType.TYPE_CLASS_TEXT or InputType.TYPE_TEXT_VARIATION_PASSWORD
                  isPasswordVisible = false
             }else{
-                binding.signupPasswordEt.inputType =  InputType.TYPE_TEXT_VARIATION_VISIBLE_PASSWORD
-            isPasswordVisible  = true// InputType.T
+                binding.signupPasswordEt.inputType = InputType.TYPE_CLASS_TEXT or  InputType.TYPE_TEXT_VARIATION_VISIBLE_PASSWORD
+            isPasswordVisible  = true
 
             }
             binding.signupPasswordEt.apply {
                 setSelection(this.text.trim().length)
             }
         }
-
 
        binding.signupSignupBtn.setOnClickListener {
            val email = binding.signupEmailEt.text.toString().trim()
@@ -60,7 +61,7 @@ private val authViewModel by viewModels<AuthViewModel>()
            val user = User(userName,phoneNumber, email, password)
 
 
-           if (authViewModel.isSignupFieldsNotEmpty(user)){
+           if (signupViewModel.isSignupFieldsNotEmpty(user)){
                if (!isPasswordValid(user)){
                    binding.signupPasswordEt.error = "password must be more 6 digits"
                }
@@ -72,9 +73,9 @@ private val authViewModel by viewModels<AuthViewModel>()
                }
 
                if (isEmailValid(user) && isPasswordValid(user) && isPhoneNumberValid(user)){
-                   authViewModel.signupWithFirebase(email, password)
+                   signupViewModel.signupWithFirebase(binding.signupPhoneNumberEt,user)
                    lifecycleScope.launch {
-                       authViewModel.signupStatus.collectLatest {
+                       signupViewModel.signupStatus.collectLatest {
                            when(it){
                                is Resources.Error -> {
                                    hidePR()
@@ -82,6 +83,7 @@ private val authViewModel by viewModels<AuthViewModel>()
                                }
                                is Resources.Loading -> {
                                    showPR()
+                                   delay(2000L)
                                }
                                is Resources.Success -> {
                                    hidePR()
@@ -99,19 +101,19 @@ private val authViewModel by viewModels<AuthViewModel>()
     }
 
     private fun  isEmailValid(user: User):Boolean{
-        var emailValid  = authViewModel.checkEmail(user)
+        var emailValid  = signupViewModel.checkEmail(user)
 
        return emailValid
     }
 
     private fun  isPhoneNumberValid(user: User):Boolean{
-        var phoneNumberValid  = authViewModel.checkPhoneNumber(user)
+        var phoneNumberValid  = signupViewModel.checkPhoneNumber(user)
 
         return phoneNumberValid
     }
 
     private fun isPasswordValid(user: User):Boolean{
-        var passwordValid  = authViewModel.checkPassword(user)
+        var passwordValid  = signupViewModel.checkPassword(user)
         return passwordValid
     }
     private fun showPR(){
@@ -123,5 +125,6 @@ private val authViewModel by viewModels<AuthViewModel>()
         binding.signupBtnPr.visibility = View.INVISIBLE
         binding.signupSignupBtn.visibility= View.VISIBLE
     }
+
 
 }

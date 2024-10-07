@@ -70,7 +70,7 @@
 
 
     <EditText
-        android:id="@+id/signup_email_et"
+        android:id="@+id/login_email_et"
         android:layout_width="match_parent"
         android:layout_height="55dp"
         app:layout_constraintStart_toStartOf="parent"
@@ -79,6 +79,7 @@
         android:layout_marginStart="35dp"
         android:layout_marginEnd="20dp"
         android:hint="Email"
+        android:textSize="15sp"
         android:drawableStart="@drawable/email_icon"
         android:drawablePadding="20dp"
         android:paddingStart="15dp"
@@ -94,9 +95,12 @@
         android:layout_marginTop="17dp"
         android:textSize="16sp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/signup_email_et" />
+        app:layout_constraintTop_toBottomOf="@id/login_email_et" />
+
+
+
     <EditText
-        android:id="@+id/signup_password_et"
+        android:id="@+id/login_password_et"
         android:layout_width="match_parent"
         android:layout_height="55dp"
         app:layout_constraintStart_toStartOf="parent"
@@ -105,24 +109,42 @@
         android:layout_marginStart="35dp"
         android:layout_marginEnd="20dp"
         android:hint="Password"
+        android:textSize="15sp"
         android:drawableStart="@drawable/baseline_lock_24"
         android:drawablePadding="20dp"
         android:paddingStart="15dp"
         android:inputType="textPassword"
-        android:drawableEnd="@drawable/eye"
-        android:paddingEnd="10dp"
+        />
+    <ImageView
+        android:id="@+id/login_show_password"
+        android:layout_width="27dp"
+        android:layout_height="27dp"
+        android:src="@drawable/visibility_24px"
+        app:layout_constraintEnd_toEndOf="@id/login_password_et"
+        app:layout_constraintTop_toTopOf="@id/login_password_et"
+        app:layout_constraintBottom_toBottomOf="@id/login_password_et"
+        android:layout_marginEnd="10dp"
         />
     <TextView
         android:id="@+id/login_forget_password_tv"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Forget Password?"
-        app:layout_constraintEnd_toEndOf="@id/signup_password_et"
-        app:layout_constraintTop_toBottomOf="@id/signup_password_et"
+        app:layout_constraintEnd_toEndOf="@id/login_password_et"
+        app:layout_constraintTop_toBottomOf="@id/login_password_et"
         android:layout_marginTop="5dp"
         android:layout_marginEnd="5dp"
         />
-
+    <ProgressBar
+        android:id="@+id/login_btn_pr"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="@id/login_login_btn"
+        app:layout_constraintEnd_toEndOf="@id/login_login_btn"
+        app:layout_constraintTop_toTopOf="@id/login_login_btn"
+        app:layout_constraintBottom_toBottomOf="@id/login_login_btn"
+        android:visibility="invisible"
+        />
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/login_login_btn"
         android:layout_width="match_parent"

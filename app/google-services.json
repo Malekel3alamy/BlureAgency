@@ -12,7 +12,20 @@
           "package_name": "com.example.blureagency"
         }
       },
-      "oauth_client": [],
+      "oauth_client": [
+        {
+          "client_id": "208518129172-q8gqnd8noti9c7sekeihinttv34akaaq.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.blureagency",
+            "certificate_hash": "6ed944ab49bb8a90e0b64256ed35a5bb14e87ae9"
+          }
+        },
+        {
+          "client_id": "208518129172-s8u6epugrp2a5udq9mn6bj56ugbv9dta.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
       "api_key": [
         {
           "current_key": "AIzaSyBbby0obkj2EVF7UCpNkhEg7dCvsrnlf5Y"
@@ -20,7 +33,12 @@
       ],
       "services": {
         "appinvite_service": {
-          "other_platform_oauth_client": []
+          "other_platform_oauth_client": [
+            {
+              "client_id": "208518129172-s8u6epugrp2a5udq9mn6bj56ugbv9dta.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
         }
       }
     }
