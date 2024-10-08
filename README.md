@@ -35,6 +35,8 @@ This app provides a comprehensive platform for a company offering multiple servi
 - **LiveData & Flow**: For reactive programming.
 - **Dagger Hilt**: For dependency injection.
 - **Third-Party APIs**: For various functionalities.
+- **Firebase**: For Authentication .
+- **Coroutines**: For Asyncronous services.
 
 ## Contributing
 Contributions are welcome! Please follow these steps:
