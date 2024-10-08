@@ -18,7 +18,7 @@ This app provides a comprehensive platform for a company offering multiple servi
 ## Installation
 1. Clone the repository:
    ```bash
-   git clone https://github.com/yourusername/your-repo-name.git
+   git clone https://github.com/Malekel3alamy/BlureAgency.git
    ```
 2. Open the project in Android Studio.
 3. Build the project to download all dependencies.
