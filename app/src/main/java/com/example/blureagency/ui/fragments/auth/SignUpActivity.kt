@@ -1,5 +1,6 @@
 package com.example.blureagency.ui.fragments.auth
 
+import android.content.Intent
 import android.os.Bundle
 import android.provider.Settings.Global
 import android.text.InputType
@@ -9,11 +10,18 @@ import android.widget.Toast
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.lifecycleScope
+import androidx.lifecycle.viewModelScope
 import com.example.blureagency.R
 import com.example.blureagency.databinding.ActivitySignUpBinding
 import com.example.blureagency.model.User
+import com.example.blureagency.ui.MainActivity
 import com.example.blureagency.ui.viewmodel.SignupViewModel
 import com.example.movies.utils.Resources
+import com.google.android.gms.auth.api.signin.GoogleSignIn
+import com.google.android.gms.auth.api.signin.GoogleSignInOptions
+import com.google.android.gms.common.api.ApiException
+import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.auth.GoogleAuthProvider
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.flow.collectLatest
@@ -25,6 +33,9 @@ private lateinit var binding :ActivitySignUpBinding
 
 private val signupViewModel by viewModels<SignupViewModel>()
 
+    companion object {
+        const val RC_SIGN_IN = 9001
+    }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -98,6 +109,11 @@ private val signupViewModel by viewModels<SignupViewModel>()
                Toast.makeText(this@SignUpActivity,"make sure to enter all fields",Toast.LENGTH_SHORT).show()
            }
        }
+
+
+     /*   binding.signupGoogleIcon.setOnClickListener {
+            signUpWithGoogle()
+        }*/
     }
 
     private fun  isEmailValid(user: User):Boolean{
@@ -125,6 +141,11 @@ private val signupViewModel by viewModels<SignupViewModel>()
         binding.signupBtnPr.visibility = View.INVISIBLE
         binding.signupSignupBtn.visibility= View.VISIBLE
     }
+
+
+
+
+
 
 
 }

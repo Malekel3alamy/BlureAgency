@@ -12,10 +12,16 @@ import androidx.lifecycle.lifecycleScope
 import com.example.blureagency.R
 import com.example.blureagency.databinding.ActivityLoginBinding
 import com.example.blureagency.ui.MainActivity
+import com.example.blureagency.ui.fragments.auth.SignUpActivity.Companion
 import com.example.blureagency.ui.viewmodel.SignInViewModel
 import com.example.blureagency.ui.viewmodel.SignupViewModel
 import com.example.movies.utils.Resources
 import com.example.storeapp.utils.RegisterValidation
+import com.google.android.gms.auth.api.signin.GoogleSignIn
+import com.google.android.gms.auth.api.signin.GoogleSignInOptions
+import com.google.android.gms.common.api.ApiException
+import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.auth.GoogleAuthProvider
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.delay
@@ -30,7 +36,9 @@ class LoginActivity : AppCompatActivity(R.layout.activity_login) {
     private val signupViewModel by viewModels<SignupViewModel>()
 
     private var email = ""
-
+    companion object {
+        private const val RC_SIGN_IN = 9001
+    }
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityLoginBinding.inflate(layoutInflater)
@@ -106,6 +114,14 @@ class LoginActivity : AppCompatActivity(R.layout.activity_login) {
            }
         }
 
+
+
+        binding.signupGoogleIcon.setOnClickListener {
+            signInWithGoogle()
+
+        }
+
+
         // show and hide password
         var isPasswordVisible = false
         binding.loginShowPassword.setOnClickListener {
@@ -124,6 +140,47 @@ class LoginActivity : AppCompatActivity(R.layout.activity_login) {
         }
 
 
+    }
+    // sign up using google
+    fun signInWithGoogle() {
+        val gso = GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
+            .requestIdToken(resources.getString(R.string.default_web_client_id))
+            .requestEmail()
+            .build()
+
+        val googleSignInClient = GoogleSignIn.getClient(this@LoginActivity, gso)
+        val signInIntent = googleSignInClient.signInIntent
+        startActivityForResult(signInIntent, RC_SIGN_IN)
+    }
+
+    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
+        super.onActivityResult(requestCode, resultCode, data)
+
+        if (requestCode == SignUpActivity.RC_SIGN_IN) {
+            val task = GoogleSignIn.getSignedInAccountFromIntent(data)
+            try {
+                val account = task.getResult(ApiException::class.java)
+                firebaseAuthWithGoogle(account.idToken!!)
+            } catch (e: ApiException) {
+                Toast.makeText(this, "Google sign in failed: ${e.message}", Toast.LENGTH_SHORT).show()
+            }
+        }
+    }
+
+    private fun firebaseAuthWithGoogle(idToken: String) {
+        val credential = GoogleAuthProvider.getCredential(idToken, null)
+        val auth = FirebaseAuth.getInstance()
+        auth.signInWithCredential(credential)
+            .addOnCompleteListener(this) { task ->
+                if (task.isSuccessful) {
+                    val user = auth.currentUser
+                    Toast.makeText(this, "Signed in as ${user?.displayName}", Toast.LENGTH_SHORT).show()
+                    startActivity(Intent(this, MainActivity::class.java))
+                    finish()
+                } else {
+                    Toast.makeText(this, "Authentication failed", Toast.LENGTH_SHORT).show()
+                }
+            }
     }
 
     private fun showPR(){

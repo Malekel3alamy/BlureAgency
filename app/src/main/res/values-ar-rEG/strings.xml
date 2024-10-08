@@ -17,6 +17,8 @@
 
     <string name="welcome" >مرحبا بك</string>
 
+    <string name="sign_out">تسجيل خروج</string>
+
     <string name="next">التالى</string>
     <string name="skip" >تخطى</string>
 

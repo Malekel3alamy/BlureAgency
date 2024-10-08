@@ -24,7 +24,9 @@
     <style name="screen_background"><item name="android:background">@color/white_smoke</item></style>
     <style name="image_card_view_background"><item name="android:background">@color/white</item></style>
     <style name="icon_setting"><item name="android:src">@drawable/setting_light</item></style>
+    <style name="icon_signout"><item name="android:src">@drawable/arrows_6918721_removed</item></style>
 
+    <style name="login_and_signup_bg"><item name="android:background">@color/light_gray</item> </style>
     <style name="edit_text_style"><item name="android:background">@drawable/edit_text_bg_light</item>
     <item name="android:textColorHint">@color/gray</item>
     </style>
@@ -42,6 +44,7 @@
     <style name="home_cards_background"><item name="android:background">@color/white</item></style>
     <style name="text_color_description"><item name="android:textColor">@color/gray</item></style>
     <style name="text_color"><item name="android:textColor">@color/black</item></style>
+    <style name="signin_and_signup_text_color"><item name="android:textColor">@color/dark_gray2</item></style>
     <style name="splash_icon"><item name="android:src">@drawable/logo</item></style>
     <style name="button_background">
         <item name="android:backgroundTint">@color/black</item>
