@@ -3,6 +3,11 @@
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment" translatable="false">Hello blank fragment</string>
 
+    <string name="facebook_app_id" translatable="false">1234</string>
+    <string name="fb_login_protocol_scheme" translatable="false">fb1234</string>
+    <string name="facebook_client_token" translatable="false">56789</string>
+
+
     <string name="welcome" >Welcome</string>
     <string name="default_web_client_id" >208518129172-s8u6epugrp2a5udq9mn6bj56ugbv9dta.apps.googleusercontent.com</string>
     <string name="let_start" >let\'s Start </string>

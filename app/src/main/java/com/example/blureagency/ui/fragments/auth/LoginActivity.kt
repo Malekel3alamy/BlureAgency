@@ -39,6 +39,8 @@ class LoginActivity : AppCompatActivity(R.layout.activity_login) {
     companion object {
         private const val RC_SIGN_IN = 9001
     }
+
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityLoginBinding.inflate(layoutInflater)
@@ -191,6 +193,11 @@ class LoginActivity : AppCompatActivity(R.layout.activity_login) {
     private fun hidePR(){
         binding.loginBtnPr.visibility = View.INVISIBLE
         binding.loginLoginBtn.visibility= View.VISIBLE
+    }
+
+    override fun onStart() {
+        super.onStart()
+
     }
 
 }
