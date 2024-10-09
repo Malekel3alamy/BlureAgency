@@ -110,7 +110,6 @@ dependencies {
 
     // sign in with facebook
     implementation("com.facebook.android:facebook-login:latest.release")
-    implementation ("com.facebook.android:facebook-android-sdk:[4,5)")
 
 
     testImplementation(libs.junit)

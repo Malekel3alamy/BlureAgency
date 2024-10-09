@@ -3,7 +3,7 @@
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment" translatable="false">Hello blank fragment</string>
 
-    <string name="facebook_app_id" translatable="false">1234</string>
+    <string name="facebook_app_id" translatable="false">1248602042994447</string>
     <string name="fb_login_protocol_scheme" translatable="false">fb1234</string>
     <string name="facebook_client_token" translatable="false">56789</string>
 

@@ -4,6 +4,7 @@ import android.content.Intent
 import android.os.Bundle
 import android.text.InputType
 import android.text.Selection.setSelection
+import android.util.Log
 import android.view.View
 import android.widget.Toast
 import androidx.activity.viewModels
@@ -17,11 +18,19 @@ import com.example.blureagency.ui.viewmodel.SignInViewModel
 import com.example.blureagency.ui.viewmodel.SignupViewModel
 import com.example.movies.utils.Resources
 import com.example.storeapp.utils.RegisterValidation
+import com.facebook.AccessToken
+import com.facebook.CallbackManager
+import com.facebook.FacebookCallback
+import com.facebook.FacebookException
+import com.facebook.login.LoginResult
 import com.google.android.gms.auth.api.signin.GoogleSignIn
 import com.google.android.gms.auth.api.signin.GoogleSignInOptions
 import com.google.android.gms.common.api.ApiException
+import com.google.firebase.Firebase
+import com.google.firebase.auth.FacebookAuthProvider
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.GoogleAuthProvider
+import com.google.firebase.auth.auth
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.delay
@@ -39,6 +48,11 @@ class LoginActivity : AppCompatActivity(R.layout.activity_login) {
     companion object {
         private const val RC_SIGN_IN = 9001
     }
+
+
+
+    private lateinit var auth: FirebaseAuth
+
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -141,6 +155,36 @@ class LoginActivity : AppCompatActivity(R.layout.activity_login) {
             }
         }
 
+        binding.loginButton.setOnClickListener {
+            // Initialize Facebook Login button
+            val callbackManager = CallbackManager.Factory.create()
+
+            binding.loginButton.setReadPermissions("email", "public_profile")
+            binding.loginButton.registerCallback(
+                callbackManager,
+                object : FacebookCallback<LoginResult> {
+                    override fun onSuccess(loginResult: LoginResult) {
+                        //  Log.d(TAG, "facebook:onSuccess:$loginResult")
+                        handleFacebookAccessToken(loginResult.accessToken)
+                    }
+
+                    override fun onCancel() {
+                        //   Log.d(TAG, "facebook:onCancel")
+                    }
+
+                    override fun onError(error: FacebookException) {
+                        //  Log.d(TAG, "facebook:onError", error)
+                    }
+                },
+            )
+        }
+
+
+
+        // sign in with google
+
+
+
 
     }
     // sign up using google
@@ -198,6 +242,33 @@ class LoginActivity : AppCompatActivity(R.layout.activity_login) {
     override fun onStart() {
         super.onStart()
 
+    }
+
+    fun signInWithFace(){
+        val callBackManager = CallbackManager.Factory.create()
+
+    }
+
+
+    private fun handleFacebookAccessToken(token: AccessToken) {
+      //  Log.d(TAG, "handleFacebookAccessToken:$token")
+
+        // Initialize Firebase Auth
+        auth = Firebase.auth
+
+        val credential = FacebookAuthProvider.getCredential(token.token)
+        auth.signInWithCredential(credential)
+            .addOnSuccessListener {
+                val user = auth.currentUser
+                Toast.makeText(this, "Signed in as ${user?.displayName}", Toast.LENGTH_SHORT).show()
+                startActivity(Intent(this, MainActivity::class.java))
+            }.addOnFailureListener {
+                Toast.makeText(
+                    baseContext,
+                    "Authentication failed.",
+                    Toast.LENGTH_SHORT,
+                ).show()
+            }
     }
 
 }
