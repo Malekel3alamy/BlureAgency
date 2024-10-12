@@ -107,4 +107,14 @@
     // sign up fragment
     <string name="sign_up">اشترك</string>
 
+    // Conatct Fragment
+    <string name="make_sure_to_enter_all_fields">تأكد من ادخال كافة البيانات</string>
+
+    // user info fragment
+    <string name="edit">تعديل</string>
+    <string name="user_info">بيانات المستخدم</string>
+
+    // user fragment
+    <string name="our_wbsite">صفحة الويب</string>
+
 </resources>

@@ -49,6 +49,10 @@ val emailValidation = _emailValidation.asSharedFlow()
     val emailVerification = _emailVerification.asSharedFlow()
 
 
+    private val _userInfo = MutableSharedFlow<Resources<User>>()
+    val userInfo = _userInfo.asSharedFlow()
+
+
     
     fun isSignupFieldsNotEmpty(user:User):Boolean{
 
@@ -141,6 +145,32 @@ val emailValidation = _emailValidation.asSharedFlow()
         }else{
             _emailVerification.emit(Resources.Error("Email Not Verified"))
         }
+    }
+
+
+     fun getUserInfo()  =viewModelScope.launch {
+        _userInfo.emit(Resources.Loading())
+           if (firebase_auth.currentUser != null){
+                firestore.collection("users").document(firebase_auth.uid!!)
+                   .addSnapshotListener { value, error ->
+                       if (error == null){
+                           val user = value!!.toObject(User::class.java)
+                             user?.let {
+                                 viewModelScope.launch {
+                                     _userInfo.emit(Resources.Success(user!!))
+                                 }
+                             }
+                       }else{
+                           viewModelScope.launch {
+                               _userInfo.emit(Resources.Error(" Failed To bring user info "))
+                           }
+                           Log.d("USER_INFO"," Error : snap shot error ")
+                       }
+                   }
+
+           }else{
+               Log.d("USER_INFO"," Error : no current user ")
+           }
     }
 
 

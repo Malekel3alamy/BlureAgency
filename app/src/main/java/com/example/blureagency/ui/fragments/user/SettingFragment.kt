@@ -10,6 +10,7 @@ import androidx.fragment.app.Fragment
 import androidx.lifecycle.lifecycleScope
 import com.example.blureagency.R
 import com.example.blureagency.databinding.FragmentSettingBinding
+import com.example.blureagency.ui.MainActivity
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import java.io.BufferedReader
@@ -38,7 +39,7 @@ class SettingFragment : Fragment(R.layout.fragment_setting) {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         binding = FragmentSettingBinding.bind(view)
-
+        hideBottomNav()
 
         val editor =  requireActivity().getPreferences(Context.MODE_PRIVATE).edit()
         val myPreferences = requireActivity().getPreferences(Context.MODE_PRIVATE)
@@ -142,6 +143,10 @@ class SettingFragment : Fragment(R.layout.fragment_setting) {
             e.printStackTrace()
             return "false"
         }
+    }
+
+    fun hideBottomNav(){
+        (activity as MainActivity).hideNav()
     }
 
 }

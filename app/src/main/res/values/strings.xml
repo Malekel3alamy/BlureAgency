@@ -8,9 +8,9 @@
     <string name="facebook_client_token" translatable="false">56789</string>
 
 
-    <string name="welcome" >Welcome</string>
-    <string name="default_web_client_id" >208518129172-s8u6epugrp2a5udq9mn6bj56ugbv9dta.apps.googleusercontent.com</string>
-    <string name="let_start" >let\'s Start </string>
+    <string name="welcome">Welcome</string>
+    <string name="default_web_client_id">208518129172-s8u6epugrp2a5udq9mn6bj56ugbv9dta.apps.googleusercontent.com</string>
+    <string name="let_start">let\'s Start </string>
     <string name="fist_intro_text">Welcome To Blore EG \nYour Premier Provider Of IT Construction And Network Infrastructure Solutions In Egypt. </string>
 
     <string name="second_intro_text">at Blore EG \n
@@ -19,31 +19,32 @@
                     governmental institutions.</string>
 
     <string name="next">Next</string>
-    <string name="skip" >Skip</string>
+    <string name="skip">Skip</string>
 
-    <string name="about_us" >About Us</string>
+    <string name="about_us">About Us</string>
 
-    <string name="general_services" >General Services</string>
+    <string name="general_services">General Services</string>
 
-    <string name="about_us_paragraph" >Welcome To Blore EG, Your Premier Provider Of IT Construction And Network Infrastructure Solutions In Egypt. We Specialize In
+    <string name="about_us_paragraph">Welcome To Blore EG, Your Premier Provider Of IT Construction And Network Infrastructure Solutions In Egypt. We Specialize In
     Creating Robust And Reliable Network Architectures That Empower Businesses And Governmental Institutions To Thrive In The Digital
     Era. With Our Deep Industry Knowledge And Cutting-Edge Technologies, We Deliver Scalable And Tailored Solutions That Meet Your
     Unique Requirements. Our Commitment To Excellence And Customer Satisfaction Drives Us To Create Network Infrastructures That
     Enable Seamless Operations, Effective Collaboration, And Continuous Innovation. Partner With Platinum And Let Us Build A Strong Andws
     Reliable Network Infrastructure That Fuels Your Growth And Success In The Digital Age.
     Go to Settings to activate Windows</string>
-    <string name="our_location" >Our Location :</string>
-    <string name="location" >El Dokkey / Cairo / Egypt</string>
-    <string name="join_us_on" >Join Us On </string>
-    <string name="we_are_happy" >We Are Happy To Help You</string>
-    <string name="enter_your_email" >Email</string>
-    <string name="enter_your_phone" >Phone Number</string>
-    <string name="choose_service" >Choose Service</string>
-    <string name="enter_your_message" >Message</string>
+    <string name="our_location">Our Location :</string>
+    <string name="location">El Dokkey / Cairo / Egypt</string>
+    <string name="join_us_on">Join Us On </string>
+    <string name="we_are_happy">We Are Happy To Help You</string>
+    <string name="enter_your_email">Email</string>
+    <string name="enter_your_phone">Phone Number</string>
+    <string name="choose_service">Choose Service</string>
+    <string name="enter_your_message">Message</string>
 
-    <string name="general_service_paragraph" >At [ Blore EG ], we specialize in providing top-quality general finishing services that transform your spaces into stunning, polished environments. Our team of skilled professionals is dedicated to delivering meticulous craftsmanship and attention to detail in every project we undertake. Whether it’s residential, commercial, or industrial finishing, we offer a comprehensive range of services including painting, plastering, flooring, and more. By using premium materials and the latest techniques, we ensure that every surface is flawlessly finished to meet your exact specifications. Partner with us to enhance the beauty and functionality of your spaces with our reliable, efficient, and high-standard finishing solutions.</string>
+    <string name="general_service_paragraph">At [ Blore EG ], we specialize in providing top-quality general finishing services that transform your spaces into stunning, polished environments. Our team of skilled professionals is dedicated to delivering meticulous craftsmanship and attention to detail in every project we undertake. Whether it’s residential, commercial, or industrial finishing, we offer a comprehensive range of services including painting, plastering, flooring, and more. By using premium materials and the latest techniques, we ensure that every surface is flawlessly finished to meet your exact specifications. Partner with us to enhance the beauty and functionality of your spaces with our reliable, efficient, and high-standard finishing solutions.</string>
 
     <string name="contact_us">Contact Us </string>
+    <string name="edit">Edit</string>
     <string name="login">Sign In </string>
     <string name="sign_up">Sign Up </string>
 
@@ -76,8 +77,6 @@
     <string name="web_paragraph">At [Blore EG ], we excel in providing comprehensive web development services that cater to your unique business needs. Our team of experienced developers is dedicated to creating secure, scalable, and responsive web applications that not only look visually appealing but also offer a seamless user experience. We specialize in crafting custom web solutions with user-centric UI/UX designs, ensuring that your website is both functional and engaging. By integrating the latest technologies and industry best practices, we deliver web applications that are robust, efficient, and tailored to drive your business forward. Partner with us to elevate your online presence and achieve your digital goals.</string>
 
 
-
-
     <string name="welcome_to_blore_agency">Welcome To Blore EG</string>
     <string name="networks_paragraph">At Blore EG, we specialize in comprehensive network installations, configurations, optimizations, and upgrades.
         Our expert team ensures seamless setup and integration of network systems tailored to meet your specific needs.
@@ -89,6 +88,14 @@
 
     // Conatct Fragment
     <string name="make_sure_to_enter_all_fields">"make sure to enter all fields"</string>
+
+
+    // user info fragment
+    <string name="user_info">User Info</string>
+
+
+    // user fragment
+    <string name="our_wbsite">Our Website</string>
 
 
 </resources>

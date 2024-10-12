@@ -50,7 +50,7 @@
                    android:id="@+id/user_name_tv"
                    android:layout_width="wrap_content"
                    android:layout_height="wrap_content"
-                   android:text="Mahmoud Adel"
+                   android:text=""
                    android:textSize="20dp"
                    style="@style/text_color"
                    android:layout_marginStart="15dp"
@@ -105,13 +105,55 @@
       </androidx.cardview.widget.CardView>
 
        <androidx.cardview.widget.CardView
-           android:id="@+id/sign_out_card_view"
+           android:id="@+id/our_website_card_view"
            android:layout_width="match_parent"
            android:layout_height="48dp"
            app:cardCornerRadius="10dp"
            android:layout_marginEnd="20dp"
            app:layout_constraintStart_toStartOf="parent"
            app:layout_constraintTop_toBottomOf="@id/about"
+           android:layout_marginStart="10dp"
+           android:layout_marginTop="10dp"
+           >
+           <androidx.constraintlayout.widget.ConstraintLayout
+               android:layout_width="match_parent"
+               android:layout_height="match_parent"
+
+               >
+               <ImageView
+                   android:id="@+id/our_web_im"
+                   app:layout_constraintStart_toStartOf="parent"
+                   app:layout_constraintTop_toTopOf="parent"
+                   app:layout_constraintBottom_toBottomOf="parent"
+                   android:layout_width="35dp"
+                   android:layout_height="35dp"
+                   style="@style/icon_our_web"
+                   android:padding="4dp"
+                   android:scaleType="centerCrop"
+                   android:layout_marginStart="5dp"
+                   />
+               <TextView
+                   android:layout_width="wrap_content"
+                   android:layout_height="wrap_content"
+                   android:text="@string/our_wbsite"
+                   android:textSize="20dp"
+                   style="@style/text_color"
+                   android:layout_gravity="center_vertical"
+                   app:layout_constraintStart_toEndOf="@id/our_web_im"
+                   app:layout_constraintTop_toTopOf="parent"
+                   app:layout_constraintBottom_toBottomOf="parent"
+                   android:layout_marginStart="10dp"
+                   />
+           </androidx.constraintlayout.widget.ConstraintLayout>
+       </androidx.cardview.widget.CardView>
+       <androidx.cardview.widget.CardView
+           android:id="@+id/sign_out_card_view"
+           android:layout_width="match_parent"
+           android:layout_height="48dp"
+           app:cardCornerRadius="10dp"
+           android:layout_marginEnd="20dp"
+           app:layout_constraintStart_toStartOf="parent"
+           app:layout_constraintTop_toBottomOf="@id/our_website"
            android:layout_marginStart="10dp"
            android:layout_marginTop="10dp"
            >

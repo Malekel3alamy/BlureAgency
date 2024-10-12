@@ -24,6 +24,7 @@
     <style name="screen_background"><item name="android:background">@color/white_smoke</item></style>
     <style name="image_card_view_background"><item name="android:background">@color/white</item></style>
     <style name="icon_setting"><item name="android:src">@drawable/setting_light</item></style>
+    <style name="icon_our_web"><item name="android:src">@drawable/ic_web_light</item></style>
     <style name="icon_signout"><item name="android:src">@drawable/arrows_6918721_removed</item></style>
 
     <style name="login_and_signup_bg"><item name="android:background">@color/light_gray</item> </style>

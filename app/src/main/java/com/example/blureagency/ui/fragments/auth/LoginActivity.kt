@@ -42,6 +42,7 @@ class LoginActivity : AppCompatActivity(R.layout.activity_login) {
     private lateinit var binding : ActivityLoginBinding
     private val signInViewModel by viewModels<SignInViewModel>()
 
+    val firebase = Firebase.auth
     private val signupViewModel by viewModels<SignupViewModel>()
 
     private var email = ""
@@ -155,16 +156,18 @@ class LoginActivity : AppCompatActivity(R.layout.activity_login) {
             }
         }
 
+
+        // sign in with facebook
         binding.loginButton.setOnClickListener {
             // Initialize Facebook Login button
             val callbackManager = CallbackManager.Factory.create()
 
-            binding.loginButton.setReadPermissions("email", "public_profile")
+            arrayOf<String?>("email", "public_profile")
             binding.loginButton.registerCallback(
                 callbackManager,
                 object : FacebookCallback<LoginResult> {
                     override fun onSuccess(loginResult: LoginResult) {
-                        //  Log.d(TAG, "facebook:onSuccess:$loginResult")
+                          Log.d("FacebookLogin", "facebook:onSuccess:$loginResult")
                         handleFacebookAccessToken(loginResult.accessToken)
                     }
 
@@ -178,11 +181,6 @@ class LoginActivity : AppCompatActivity(R.layout.activity_login) {
                 },
             )
         }
-
-
-
-        // sign in with google
-
 
 
 
@@ -241,34 +239,38 @@ class LoginActivity : AppCompatActivity(R.layout.activity_login) {
 
     override fun onStart() {
         super.onStart()
-
+        if (firebase.currentUser != null){
+            startActivity(Intent(this@LoginActivity, MainActivity::class.java))
+        }
     }
 
-    fun signInWithFace(){
-        val callBackManager = CallbackManager.Factory.create()
 
-    }
+
 
 
     private fun handleFacebookAccessToken(token: AccessToken) {
       //  Log.d(TAG, "handleFacebookAccessToken:$token")
 
-        // Initialize Firebase Auth
-        auth = Firebase.auth
+        lifecycleScope.launch {
+            // Initialize Firebase Auth
+            auth = Firebase.auth
 
-        val credential = FacebookAuthProvider.getCredential(token.token)
-        auth.signInWithCredential(credential)
-            .addOnSuccessListener {
-                val user = auth.currentUser
-                Toast.makeText(this, "Signed in as ${user?.displayName}", Toast.LENGTH_SHORT).show()
-                startActivity(Intent(this, MainActivity::class.java))
-            }.addOnFailureListener {
-                Toast.makeText(
-                    baseContext,
-                    "Authentication failed.",
-                    Toast.LENGTH_SHORT,
-                ).show()
-            }
+            val credential = FacebookAuthProvider.getCredential(token.token)
+            auth.signInWithCredential(credential)
+                .addOnSuccessListener {
+                    startActivity(Intent(this@LoginActivity, MainActivity::class.java))
+
+                    val user = auth.currentUser
+                    Toast.makeText(this@LoginActivity, "Signed in as ${user?.displayName}", Toast.LENGTH_SHORT).show()
+                }.addOnFailureListener {
+                    Toast.makeText(
+                        baseContext,
+                        "Authentication failed.",
+                        Toast.LENGTH_SHORT,
+                    ).show()
+                }
+        }
+
     }
 
 }

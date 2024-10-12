@@ -10,6 +10,7 @@
 
     <style name="screen_background"><item name="android:background">@color/black</item></style>
     <style name="icon_setting"><item name="android:src">@drawable/settings_dark</item></style>
+    <style name="icon_our_web"><item name="android:src">@drawable/ic_web_dark</item></style>
 
     <style name="icon_signout"><item name="android:src">@drawable/arrow_signout_dark</item></style>
     <style name="icon_language">

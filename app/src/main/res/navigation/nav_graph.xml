@@ -58,6 +58,9 @@
         <action
             android:id="@+id/action_userFragment_to_aboutFragment"
             app:destination="@id/aboutFragment" />
+        <action
+            android:id="@+id/action_userFragment_to_userInfoFragment2"
+            app:destination="@id/userInfoFragment2" />
     </fragment>
     <fragment
         android:id="@+id/contactUsFragment"
@@ -118,4 +121,9 @@
         android:name="com.example.blureagency.ui.fragments.OffersFragment"
         android:label="fragment_offers"
         tools:layout="@layout/fragment_offers" />
+    <fragment
+        android:id="@+id/userInfoFragment2"
+        android:name="com.example.blureagency.ui.fragments.user.UserInfoFragment"
+        android:label="fragment_user_info"
+        tools:layout="@layout/fragment_user_info" />
 </navigation>

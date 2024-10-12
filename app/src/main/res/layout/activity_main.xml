@@ -45,7 +45,7 @@
         app:itemTextColor="@color/black"
        style="@style/Widget.MaterialComponents.BottomNavigationView.Colored"
         android:fadeScrollbars="false"
-        app:labelVisibilityMode="labeled"
+        app:labelVisibilityMode="unlabeled"
         app:shapeAppearanceOverlay="@style/CutCorners"
         app:background="@drawable/bottom_navigation_background"
         />
