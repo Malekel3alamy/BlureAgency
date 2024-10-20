@@ -11,9 +11,7 @@ This app provides a comprehensive platform for a company offering multiple servi
 - **Contact Options**: Easy connection with the company through WhatsApp or email.
 - **User-Friendly Interface**: Intuitive navigation and user experience.
 
-## Screenshots
-![Screenshot1](link_to_screenshot1)
-![Screenshot2](link_to_screenshot2)
+**Video Link** : 
 
 ## Installation
 1. Clone the repository:
