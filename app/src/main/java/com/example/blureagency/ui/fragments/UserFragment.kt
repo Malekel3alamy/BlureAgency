@@ -43,6 +43,10 @@ class UserFragment : Fragment(R.layout.fragment_user) {
             findNavController().navigate(R.id.action_userFragment_to_userInfoFragment2)
         }
 
+        binding.ourWebsiteCardView.setOnClickListener {
+            findNavController().navigate(R.id.action_userFragment_to_webPageFragment)
+        }
+
         lifecycleScope.launch {
             signupViewModel.userInfo.collectLatest {
                 when(it){
